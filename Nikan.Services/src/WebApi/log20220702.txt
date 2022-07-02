@@ -1,0 +1,374 @@
+2022-07-02 00:00:05.057 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:57678/api/DataOwner application/json-patch+json 23
+2022-07-02 00:00:05.071 +03:00 [INF] Executing endpoint 'Nikan.Services.CrmProfiles.WebApi.V1.Controller.DataOwnerController.Post (Nikan.Services.CrmProfiles.WebApi)'
+2022-07-02 00:00:05.102 +03:00 [INF] Route matched with {action = "Post", controller = "DataOwner"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Post(Nikan.Services.CrmProfiles.WebApi.V1.ApiModels.DataOwnerDto) on controller Nikan.Services.CrmProfiles.WebApi.V1.Controller.DataOwnerController (Nikan.Services.CrmProfiles.WebApi).
+2022-07-02 00:00:09.195 +03:00 [INF] Executing action method Nikan.Services.CrmProfiles.WebApi.V1.Controller.DataOwnerController.Post (Nikan.Services.CrmProfiles.WebApi) - Validation state: "Valid"
+2022-07-02 00:00:11.864 +03:00 [INF] Entity Framework Core 6.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.5+9d79af6e2586d5d28da253ac075706a5575a1743' with options: None
+2022-07-02 00:00:12.091 +03:00 [INF] Executed DbCommand (34ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTimeOffset), @p2='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO data_owner ("Id", "DateIssued", "Title")
+VALUES (@p0, @p1, @p2);
+2022-07-02 00:00:12.155 +03:00 [INF] Executed action method Nikan.Services.CrmProfiles.WebApi.V1.Controller.DataOwnerController.Post (Nikan.Services.CrmProfiles.WebApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2955.8967ms.
+2022-07-02 00:00:12.164 +03:00 [INF] Executing OkObjectResult, writing value of type 'Nikan.Services.CrmProfiles.WebApi.V1.ApiModels.DataOwnerDto'.
+2022-07-02 00:00:12.209 +03:00 [INF] Executed action Nikan.Services.CrmProfiles.WebApi.V1.Controller.DataOwnerController.Post (Nikan.Services.CrmProfiles.WebApi) in 7100.0735ms
+2022-07-02 00:00:12.210 +03:00 [INF] Executed endpoint 'Nikan.Services.CrmProfiles.WebApi.V1.Controller.DataOwnerController.Post (Nikan.Services.CrmProfiles.WebApi)'
+2022-07-02 00:00:12.219 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:57678/api/DataOwner application/json-patch+json 23 - 200 18 application/json;+charset=utf-8 7162.6238ms
+2022-07-02 17:27:42.360 +03:00 [INF] Entity Framework Core 6.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.5+9d79af6e2586d5d28da253ac075706a5575a1743' with options: None
+2022-07-02 17:27:51.997 +03:00 [INF] Entity Framework Core 6.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.5+9d79af6e2586d5d28da253ac075706a5575a1743' with options: None
+2022-07-02 17:28:02.817 +03:00 [INF] User profile is available. Using 'C:\Users\Omid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-02 17:28:04.158 +03:00 [INF] Entity Framework Core 6.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.5+9d79af6e2586d5d28da253ac075706a5575a1743' with options: None
+2022-07-02 17:28:07.369 +03:00 [INF] Executed DbCommand (2,568ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE DATABASE nikan_services_crm_profile;
+2022-07-02 17:28:07.656 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+2022-07-02 17:28:07.742 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2022-07-02 17:28:07.752 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2022-07-02 17:28:07.771 +03:00 [INF] Applying migration '20220702142752_InitialDatabase'.
+2022-07-02 17:28:07.877 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE account (
+    "Id" uuid NOT NULL,
+    "DataOwner" uuid NOT NULL,
+    "Title" text NOT NULL,
+    "Phone" text NOT NULL,
+    "EmailAddress" text NOT NULL,
+    "PostalAddress" text NOT NULL,
+    "DateIssued" timestamp with time zone NOT NULL,
+    "CreatedBy" uuid NOT NULL,
+    CONSTRAINT "PK_account" PRIMARY KEY ("Id")
+);
+2022-07-02 17:28:07.889 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE data_owner (
+    "Id" uuid NOT NULL,
+    "Title" text NOT NULL,
+    "DateIssued" timestamp with time zone NOT NULL,
+    CONSTRAINT "PK_data_owner" PRIMARY KEY ("Id")
+);
+2022-07-02 17:28:07.900 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Project" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "Name" character varying(100) NOT NULL,
+    "Priority" integer NOT NULL,
+    CONSTRAINT "PK_Project" PRIMARY KEY ("Id")
+);
+2022-07-02 17:28:07.921 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "ToDoItem" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "Title" text NOT NULL,
+    "Description" text NOT NULL,
+    "IsDone" boolean NOT NULL,
+    "ProjectId" integer NULL,
+    CONSTRAINT "PK_ToDoItem" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_ToDoItem_Project_ProjectId" FOREIGN KEY ("ProjectId") REFERENCES "Project" ("Id")
+);
+2022-07-02 17:28:07.925 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_ToDoItem_ProjectId" ON "ToDoItem" ("ProjectId");
+2022-07-02 17:28:07.927 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20220702142752_InitialDatabase', '6.0.5');
+2022-07-02 17:28:07.994 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+SELECT CASE WHEN COUNT(*) = 0 THEN FALSE ELSE TRUE END
+FROM pg_class AS cls
+JOIN pg_namespace AS ns ON ns.oid = cls.relnamespace
+WHERE
+        cls.relkind IN ('r', 'v', 'm', 'f', 'p') AND
+        ns.nspname NOT IN ('pg_catalog', 'information_schema') AND
+        -- Exclude tables which are members of PG extensions
+        NOT EXISTS (
+            SELECT 1 FROM pg_depend WHERE
+                classid=(
+                    SELECT cls.oid
+                    FROM pg_class AS cls
+                             JOIN pg_namespace AS ns ON ns.oid = cls.relnamespace
+                    WHERE relname='pg_class' AND ns.nspname='pg_catalog'
+                ) AND
+                objid=cls.oid AND
+                deptype IN ('e', 'x')
+        )
+2022-07-02 17:28:08.014 +03:00 [INF] Entity Framework Core 6.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.5+9d79af6e2586d5d28da253ac075706a5575a1743' with options: None
+2022-07-02 17:28:08.241 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-02 17:28:08.242 +03:00 [INF] Hosting environment: Development
+2022-07-02 17:28:08.242 +03:00 [INF] Content root path: D:\Booking\Nikan.Services.CrmProfiles\Nikan.Services.CrmProfiles\src\Nikan.Services.CrmProfiles.Web\
+2022-07-02 17:28:08.288 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - -
+2022-07-02 17:28:08.353 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-07-02 17:28:08.692 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - -
+2022-07-02 17:28:08.700 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - - - 200 11970 application/javascript;+charset=utf-8 7.3528ms
+2022-07-02 17:28:08.709 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - - - 200 - text/html;charset=utf-8 423.8492ms
+2022-07-02 17:28:08.965 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - -
+2022-07-02 17:28:09.103 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 138.1767ms
+2022-07-02 18:07:03.654 +03:00 [INF] Entity Framework Core 6.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.5+9d79af6e2586d5d28da253ac075706a5575a1743' with options: None
+2022-07-02 18:07:29.847 +03:00 [INF] User profile is available. Using 'C:\Users\Omid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-02 18:07:30.777 +03:00 [INF] Entity Framework Core 6.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.5+9d79af6e2586d5d28da253ac075706a5575a1743' with options: None
+2022-07-02 18:07:33.043 +03:00 [INF] Executed DbCommand (1,735ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE DATABASE nikan_services_crm_profile;
+2022-07-02 18:07:33.335 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+2022-07-02 18:07:33.419 +03:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2022-07-02 18:07:33.431 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2022-07-02 18:07:33.450 +03:00 [INF] Applying migration '20220702150703_InitialDatabase'.
+2022-07-02 18:07:33.492 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE account (
+    "Id" uuid NOT NULL,
+    "CompanyId" uuid NOT NULL,
+    "Title" text NOT NULL,
+    "Phone" text NOT NULL,
+    "EmailAddress" text NOT NULL,
+    "PostalAddress" text NOT NULL,
+    "DateIssued" timestamp with time zone NOT NULL,
+    "CreatedBy" uuid NOT NULL,
+    CONSTRAINT "PK_account" PRIMARY KEY ("Id")
+);
+2022-07-02 18:07:33.494 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20220702150703_InitialDatabase', '6.0.5');
+2022-07-02 18:07:33.549 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+SELECT CASE WHEN COUNT(*) = 0 THEN FALSE ELSE TRUE END
+FROM pg_class AS cls
+JOIN pg_namespace AS ns ON ns.oid = cls.relnamespace
+WHERE
+        cls.relkind IN ('r', 'v', 'm', 'f', 'p') AND
+        ns.nspname NOT IN ('pg_catalog', 'information_schema') AND
+        -- Exclude tables which are members of PG extensions
+        NOT EXISTS (
+            SELECT 1 FROM pg_depend WHERE
+                classid=(
+                    SELECT cls.oid
+                    FROM pg_class AS cls
+                             JOIN pg_namespace AS ns ON ns.oid = cls.relnamespace
+                    WHERE relname='pg_class' AND ns.nspname='pg_catalog'
+                ) AND
+                objid=cls.oid AND
+                deptype IN ('e', 'x')
+        )
+2022-07-02 18:07:33.570 +03:00 [INF] Entity Framework Core 6.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.5+9d79af6e2586d5d28da253ac075706a5575a1743' with options: None
+2022-07-02 18:07:33.682 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-02 18:07:33.682 +03:00 [INF] Hosting environment: Development
+2022-07-02 18:07:33.682 +03:00 [INF] Content root path: D:\Booking\Nikan.Services.CrmProfiles\Nikan.Services.CrmProfiles\src\Nikan.Services.CrmProfiles.Web\
+2022-07-02 18:07:33.700 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - -
+2022-07-02 18:07:33.752 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-07-02 18:07:33.964 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - -
+2022-07-02 18:07:33.970 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - - - 200 11970 application/javascript;+charset=utf-8 4.9445ms
+2022-07-02 18:07:33.986 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - - - 200 - text/html;charset=utf-8 288.8059ms
+2022-07-02 18:07:34.230 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - -
+2022-07-02 18:07:34.357 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 126.8882ms
+2022-07-02 18:08:28.049 +03:00 [INF] User profile is available. Using 'C:\Users\Omid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-02 18:08:28.985 +03:00 [INF] Entity Framework Core 6.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.5+9d79af6e2586d5d28da253ac075706a5575a1743' with options: None
+2022-07-02 18:08:29.454 +03:00 [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2022-07-02 18:08:29.500 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2022-07-02 18:08:29.518 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2022-07-02 18:08:29.539 +03:00 [INF] No migrations were applied. The database is already up to date.
+2022-07-02 18:08:29.584 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+SELECT CASE WHEN COUNT(*) = 0 THEN FALSE ELSE TRUE END
+FROM pg_class AS cls
+JOIN pg_namespace AS ns ON ns.oid = cls.relnamespace
+WHERE
+        cls.relkind IN ('r', 'v', 'm', 'f', 'p') AND
+        ns.nspname NOT IN ('pg_catalog', 'information_schema') AND
+        -- Exclude tables which are members of PG extensions
+        NOT EXISTS (
+            SELECT 1 FROM pg_depend WHERE
+                classid=(
+                    SELECT cls.oid
+                    FROM pg_class AS cls
+                             JOIN pg_namespace AS ns ON ns.oid = cls.relnamespace
+                    WHERE relname='pg_class' AND ns.nspname='pg_catalog'
+                ) AND
+                objid=cls.oid AND
+                deptype IN ('e', 'x')
+        )
+2022-07-02 18:08:29.605 +03:00 [INF] Entity Framework Core 6.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.5+9d79af6e2586d5d28da253ac075706a5575a1743' with options: None
+2022-07-02 18:08:29.730 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-02 18:08:29.731 +03:00 [INF] Hosting environment: Development
+2022-07-02 18:08:29.731 +03:00 [INF] Content root path: D:\Booking\Nikan.Services.CrmProfiles\Nikan.Services.CrmProfiles\src\Nikan.Services.CrmProfiles.Web\
+2022-07-02 18:08:29.749 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - -
+2022-07-02 18:08:29.798 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-07-02 18:08:30.014 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - -
+2022-07-02 18:08:30.020 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - - - 200 11970 application/javascript;+charset=utf-8 4.9527ms
+2022-07-02 18:08:30.039 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - - - 200 - text/html;charset=utf-8 292.7925ms
+2022-07-02 18:08:30.289 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - -
+2022-07-02 18:08:30.411 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 121.7602ms
+2022-07-02 18:16:21.881 +03:00 [INF] User profile is available. Using 'C:\Users\Omid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-02 18:16:22.907 +03:00 [INF] Entity Framework Core 6.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.5+9d79af6e2586d5d28da253ac075706a5575a1743' with options: None
+2022-07-02 18:16:23.653 +03:00 [INF] Executed DbCommand (136ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2022-07-02 18:16:23.715 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2022-07-02 18:16:23.744 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2022-07-02 18:16:23.770 +03:00 [INF] No migrations were applied. The database is already up to date.
+2022-07-02 18:16:23.817 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+SELECT CASE WHEN COUNT(*) = 0 THEN FALSE ELSE TRUE END
+FROM pg_class AS cls
+JOIN pg_namespace AS ns ON ns.oid = cls.relnamespace
+WHERE
+        cls.relkind IN ('r', 'v', 'm', 'f', 'p') AND
+        ns.nspname NOT IN ('pg_catalog', 'information_schema') AND
+        -- Exclude tables which are members of PG extensions
+        NOT EXISTS (
+            SELECT 1 FROM pg_depend WHERE
+                classid=(
+                    SELECT cls.oid
+                    FROM pg_class AS cls
+                             JOIN pg_namespace AS ns ON ns.oid = cls.relnamespace
+                    WHERE relname='pg_class' AND ns.nspname='pg_catalog'
+                ) AND
+                objid=cls.oid AND
+                deptype IN ('e', 'x')
+        )
+2022-07-02 18:16:23.941 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-02 18:16:23.942 +03:00 [INF] Hosting environment: Development
+2022-07-02 18:16:23.942 +03:00 [INF] Content root path: D:\Booking\Nikan.Services.CrmProfiles\Nikan.Services.CrmProfiles\src\Nikan.Services.CrmProfiles.Web\
+2022-07-02 18:16:23.961 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - -
+2022-07-02 18:16:24.037 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-07-02 18:16:24.327 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - -
+2022-07-02 18:16:24.335 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - - - 200 11968 application/javascript;+charset=utf-8 6.6756ms
+2022-07-02 18:16:24.354 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - - - 200 - text/html;charset=utf-8 396.3777ms
+2022-07-02 18:16:24.761 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - -
+2022-07-02 18:16:24.857 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 96.4504ms
+2022-07-02 18:19:45.829 +03:00 [INF] User profile is available. Using 'C:\Users\Omid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-02 18:19:46.874 +03:00 [INF] Entity Framework Core 6.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.5+9d79af6e2586d5d28da253ac075706a5575a1743' with options: None
+2022-07-02 18:19:47.350 +03:00 [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2022-07-02 18:19:47.403 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2022-07-02 18:19:47.423 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2022-07-02 18:19:47.447 +03:00 [INF] No migrations were applied. The database is already up to date.
+2022-07-02 18:19:47.497 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+SELECT CASE WHEN COUNT(*) = 0 THEN FALSE ELSE TRUE END
+FROM pg_class AS cls
+JOIN pg_namespace AS ns ON ns.oid = cls.relnamespace
+WHERE
+        cls.relkind IN ('r', 'v', 'm', 'f', 'p') AND
+        ns.nspname NOT IN ('pg_catalog', 'information_schema') AND
+        -- Exclude tables which are members of PG extensions
+        NOT EXISTS (
+            SELECT 1 FROM pg_depend WHERE
+                classid=(
+                    SELECT cls.oid
+                    FROM pg_class AS cls
+                             JOIN pg_namespace AS ns ON ns.oid = cls.relnamespace
+                    WHERE relname='pg_class' AND ns.nspname='pg_catalog'
+                ) AND
+                objid=cls.oid AND
+                deptype IN ('e', 'x')
+        )
+2022-07-02 18:19:47.599 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-02 18:19:47.599 +03:00 [INF] Hosting environment: Development
+2022-07-02 18:19:47.599 +03:00 [INF] Content root path: D:\Booking\Nikan.Services.CrmProfiles\Nikan.Services.CrmProfiles\src\Nikan.Services.CrmProfiles.Web\
+2022-07-02 18:19:47.619 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - -
+2022-07-02 18:19:47.668 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-07-02 18:19:47.897 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - -
+2022-07-02 18:19:47.904 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - - - 200 11968 application/javascript;+charset=utf-8 5.6296ms
+2022-07-02 18:19:47.918 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - - - 200 - text/html;charset=utf-8 302.8862ms
+2022-07-02 18:19:48.160 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - -
+2022-07-02 18:19:48.262 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 101.6506ms
+2022-07-02 18:20:30.125 +03:00 [INF] User profile is available. Using 'C:\Users\Omid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-02 18:20:31.151 +03:00 [INF] Entity Framework Core 6.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.5+9d79af6e2586d5d28da253ac075706a5575a1743' with options: None
+2022-07-02 18:20:31.630 +03:00 [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2022-07-02 18:20:31.690 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2022-07-02 18:20:31.708 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2022-07-02 18:20:31.731 +03:00 [INF] No migrations were applied. The database is already up to date.
+2022-07-02 18:20:31.778 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+SELECT CASE WHEN COUNT(*) = 0 THEN FALSE ELSE TRUE END
+FROM pg_class AS cls
+JOIN pg_namespace AS ns ON ns.oid = cls.relnamespace
+WHERE
+        cls.relkind IN ('r', 'v', 'm', 'f', 'p') AND
+        ns.nspname NOT IN ('pg_catalog', 'information_schema') AND
+        -- Exclude tables which are members of PG extensions
+        NOT EXISTS (
+            SELECT 1 FROM pg_depend WHERE
+                classid=(
+                    SELECT cls.oid
+                    FROM pg_class AS cls
+                             JOIN pg_namespace AS ns ON ns.oid = cls.relnamespace
+                    WHERE relname='pg_class' AND ns.nspname='pg_catalog'
+                ) AND
+                objid=cls.oid AND
+                deptype IN ('e', 'x')
+        )
+2022-07-02 18:20:31.889 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-02 18:20:31.889 +03:00 [INF] Hosting environment: Development
+2022-07-02 18:20:31.889 +03:00 [INF] Content root path: D:\Booking\Nikan.Services.CrmProfiles\Nikan.Services.CrmProfiles\src\Nikan.Services.CrmProfiles.Web\
+2022-07-02 18:20:31.908 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - -
+2022-07-02 18:20:31.970 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-07-02 18:20:32.204 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - -
+2022-07-02 18:20:32.210 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - - - 200 11968 application/javascript;+charset=utf-8 5.6920ms
+2022-07-02 18:20:32.227 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - - - 200 - text/html;charset=utf-8 321.3032ms
+2022-07-02 18:20:32.491 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - -
+2022-07-02 18:20:32.577 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 85.6369ms
+2022-07-02 18:36:34.746 +03:00 [INF] User profile is available. Using 'C:\Users\Omid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-02 18:36:35.958 +03:00 [INF] Entity Framework Core 6.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.5+9d79af6e2586d5d28da253ac075706a5575a1743' with options: None
+2022-07-02 18:36:36.466 +03:00 [INF] Executed DbCommand (101ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2022-07-02 18:36:36.524 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2022-07-02 18:36:36.543 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2022-07-02 18:36:36.569 +03:00 [INF] No migrations were applied. The database is already up to date.
+2022-07-02 18:36:36.628 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+SELECT CASE WHEN COUNT(*) = 0 THEN FALSE ELSE TRUE END
+FROM pg_class AS cls
+JOIN pg_namespace AS ns ON ns.oid = cls.relnamespace
+WHERE
+        cls.relkind IN ('r', 'v', 'm', 'f', 'p') AND
+        ns.nspname NOT IN ('pg_catalog', 'information_schema') AND
+        -- Exclude tables which are members of PG extensions
+        NOT EXISTS (
+            SELECT 1 FROM pg_depend WHERE
+                classid=(
+                    SELECT cls.oid
+                    FROM pg_class AS cls
+                             JOIN pg_namespace AS ns ON ns.oid = cls.relnamespace
+                    WHERE relname='pg_class' AND ns.nspname='pg_catalog'
+                ) AND
+                objid=cls.oid AND
+                deptype IN ('e', 'x')
+        )
+2022-07-02 18:36:36.723 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-02 18:36:36.723 +03:00 [INF] Hosting environment: Development
+2022-07-02 18:36:36.723 +03:00 [INF] Content root path: D:\Booking\Nikan.Services.BasicData\Nikan.Services\src\WebApi\
+2022-07-02 18:36:36.743 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - -
+2022-07-02 18:36:36.817 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-07-02 18:36:37.582 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - -
+2022-07-02 18:36:37.591 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - - - 200 11968 application/javascript;+charset=utf-8 7.5916ms
+2022-07-02 18:36:37.608 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - - - 200 - text/html;charset=utf-8 868.4511ms
+2022-07-02 18:36:37.974 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - -
+2022-07-02 18:36:38.071 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 96.7169ms
