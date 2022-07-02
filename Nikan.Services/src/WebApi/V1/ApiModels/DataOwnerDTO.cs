@@ -1,8 +1,8 @@
 ﻿namespace Nikan.Services.CrmProfiles.WebApi.V1.ApiModels;
 
-public class DataOwnerDto : CreateDataOwnerDto
+public class CompanyDto : CreateCompanyDto
 {
-  public DataOwnerDto(Guid? id, string title) : base(title)
+  public CompanyDto(Guid? id, string title) : base(title)
   {
     Title = title;
   }
@@ -10,9 +10,9 @@ public class DataOwnerDto : CreateDataOwnerDto
   public string Title { get; set; }
 }
 
-public abstract class CreateDataOwnerDto
+public abstract class CreateCompanyDto
 {
-  protected CreateDataOwnerDto(string title)
+  protected CreateCompanyDto(string title)
   {
     Title = title;
   }

@@ -4,9 +4,9 @@ using Nikan.Services.CrmProfiles.Core.AccountAggregate;
 
 namespace Nikan.Services.CrmProfiles.Infrastructure.Data.Config;
 
-public class AccountConfiguration : IEntityTypeConfiguration<Account>
+public class AccountConfiguration : IEntityTypeConfiguration<Company>
 {
-  public void Configure(EntityTypeBuilder<Account> builder)
+  public void Configure(EntityTypeBuilder<Company> builder)
   {
     builder.ToTable("account");
     builder.HasKey(account => account.Id);

@@ -10,12 +10,12 @@ namespace Nikan.Services.CrmProfiles.WebApi.V1.Controller;
 ///   APIs
 ///   https://github.com/ardalis/ApiEndpoints
 /// </summary>
-[Route("/Company/{CompanyId}")]
-public class AccountController : BaseApiController
+[Route("/BasicData")]
+public class CompnyController : BaseApiController
 {
-  private readonly IRepository<Account> _repository;
+  private readonly IRepository<Company> _repository;
 
-  public AccountController(IRepository<Account> repository)
+  public CompnyController(IRepository<Company> repository)
   {
     _repository = repository;
   }
@@ -25,7 +25,7 @@ public class AccountController : BaseApiController
   public async Task<IActionResult> List()
   {
     var dataOwnerDTOs = (await _repository.ListAsync())
-      .Select(dataowner => new DataOwnerDto
+      .Select(dataowner => new CompanyDto
       (
         dataowner.Id,
         dataowner.Title

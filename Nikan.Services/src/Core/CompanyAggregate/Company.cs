@@ -4,15 +4,15 @@ using Nikan.Services.CrmProfiles.SharedKernel.Interfaces;
 
 namespace Nikan.Services.CrmProfiles.Core.AccountAggregate;
 
-public class Account : EntityBase, IAggregateRoot
+public class Company : EntityBase, IAggregateRoot
 {
-  private Account()
+  private Company()
   {
     Id = Guid.NewGuid();
     DateIssued = DateTimeOffset.Now;
   }
 
-  public Account(Guid companyId, string title, string phone, string emailAddress, string postalAddress,
+  public Company(Guid companyId, string title, string phone, string emailAddress, string postalAddress,
     Guid createdBy) : this()
   {
     Title = Guard.Against.NullOrEmpty(title, nameof(title));

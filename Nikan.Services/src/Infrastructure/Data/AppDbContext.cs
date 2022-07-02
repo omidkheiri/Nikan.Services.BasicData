@@ -20,7 +20,7 @@ public class AppDbContext : DbContext
   //public DbSet<ToDoItem> ToDoItems => Set<ToDoItem>();
   //public DbSet<Project> Projects => Set<Project>();
 
-  public DbSet<Account> Accounts => Set<Account>();
+  public DbSet<Company> Accounts => Set<Company>();
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {

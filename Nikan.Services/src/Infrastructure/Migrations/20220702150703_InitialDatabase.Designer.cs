@@ -24,7 +24,7 @@ namespace Nikan.Services.CrmProfiles.Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Nikan.Services.CrmProfiles.Core.AccountAggregate.Account", b =>
+            modelBuilder.Entity("Nikan.Services.CrmProfiles.Core.AccountAggregate.Company", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
