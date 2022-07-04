@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{D6F361DF-C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "Nikan.Services\src\WebApi\WebApi.csproj", "{7743A6CA-C8AA-4471-AB29-49EBE284E4FE}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{2B35BCC5-5A72-47BF-A1D3-D4CD30200617}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{7743A6CA-C8AA-4471-AB29-49EBE284E4FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7743A6CA-C8AA-4471-AB29-49EBE284E4FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7743A6CA-C8AA-4471-AB29-49EBE284E4FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B35BCC5-5A72-47BF-A1D3-D4CD30200617}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B35BCC5-5A72-47BF-A1D3-D4CD30200617}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B35BCC5-5A72-47BF-A1D3-D4CD30200617}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B35BCC5-5A72-47BF-A1D3-D4CD30200617}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

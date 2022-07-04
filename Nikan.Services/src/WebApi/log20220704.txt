@@ -2418,3 +2418,204 @@ LIMIT 1
 2022-07-04 13:35:09.888 +03:00 [INF] Executed action Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.GetById.HandleAsync (Nikan.Services.BasicData.WebApi) in 42.4913ms
 2022-07-04 13:35:09.888 +03:00 [INF] Executed endpoint 'Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.GetById.HandleAsync (Nikan.Services.BasicData.WebApi)'
 2022-07-04 13:35:09.888 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5101/Companies/b5b943b9-0901-4aa4-85a2-f97ab73fc640 - - - 200 302 application/json;+charset=utf-8 43.7068ms
+2022-07-04 15:39:16.659 +03:00 [INF] User profile is available. Using 'C:\Users\Omid\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-04 15:39:17.937 +03:00 [INF] Entity Framework Core 6.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.5+9d79af6e2586d5d28da253ac075706a5575a1743' with options: None
+2022-07-04 15:39:18.466 +03:00 [INF] Executed DbCommand (95ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2022-07-04 15:39:18.538 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2022-07-04 15:39:18.557 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2022-07-04 15:39:18.586 +03:00 [INF] No migrations were applied. The database is already up to date.
+2022-07-04 15:39:18.645 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+SELECT CASE WHEN COUNT(*) = 0 THEN FALSE ELSE TRUE END
+FROM pg_class AS cls
+JOIN pg_namespace AS ns ON ns.oid = cls.relnamespace
+WHERE
+        cls.relkind IN ('r', 'v', 'm', 'f', 'p') AND
+        ns.nspname NOT IN ('pg_catalog', 'information_schema') AND
+        -- Exclude tables which are members of PG extensions
+        NOT EXISTS (
+            SELECT 1 FROM pg_depend WHERE
+                classid=(
+                    SELECT cls.oid
+                    FROM pg_class AS cls
+                             JOIN pg_namespace AS ns ON ns.oid = cls.relnamespace
+                    WHERE relname='pg_class' AND ns.nspname='pg_catalog'
+                ) AND
+                objid=cls.oid AND
+                deptype IN ('e', 'x')
+        )
+2022-07-04 15:39:18.751 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-04 15:39:18.752 +03:00 [INF] Hosting environment: Development
+2022-07-04 15:39:18.752 +03:00 [INF] Content root path: D:\Booking\Nikan.Services.BasicData\Nikan.Services\src\WebApi\
+2022-07-04 15:39:18.772 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5101/swagger/index.html - -
+2022-07-04 15:39:18.824 +03:00 [WRN] Failed to determine the https port for redirect.
+2022-07-04 15:39:19.051 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5101/_framework/aspnetcore-browser-refresh.js - -
+2022-07-04 15:39:19.059 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5101/_framework/aspnetcore-browser-refresh.js - - - 200 11968 application/javascript;+charset=utf-8 6.7583ms
+2022-07-04 15:39:19.076 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5101/swagger/index.html - - - 200 - text/html;charset=utf-8 306.7634ms
+2022-07-04 15:39:19.384 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5101/swagger/v1/swagger.json - -
+2022-07-04 15:39:19.558 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5101/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 173.8533ms
+2022-07-04 13:45:17.917 +00:00 [INF] User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2022-07-04 13:45:19.339 +00:00 [INF] Entity Framework Core 6.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.5+9d79af6e2586d5d28da253ac075706a5575a1743' with options: None
+2022-07-04 13:45:21.956 +00:00 [INF] Executed DbCommand (2,067ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE DATABASE gift_certificates;
+2022-07-04 13:45:22.298 +00:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+2022-07-04 13:45:22.415 +00:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2022-07-04 13:45:22.427 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2022-07-04 13:45:22.450 +00:00 [INF] Applying migration '20220704103333_init_database'.
+2022-07-04 13:45:22.499 +00:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE company (
+    "Id" uuid NOT NULL,
+    "Title" text NOT NULL,
+    "Phone" text NOT NULL,
+    "EmailAddress" text NOT NULL,
+    "PostalAddress" text NOT NULL,
+    "DateIssued" timestamp with time zone NOT NULL,
+    "CreatedBy" uuid NOT NULL,
+    CONSTRAINT "PK_company" PRIMARY KEY ("Id")
+);
+2022-07-04 13:45:22.505 +00:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_company_EmailAddress" ON company ("EmailAddress");
+2022-07-04 13:45:22.510 +00:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_company_Phone" ON company ("Phone");
+2022-07-04 13:45:22.516 +00:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "IX_company_Title" ON company ("Title");
+2022-07-04 13:45:22.519 +00:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20220704103333_init_database', '6.0.5');
+2022-07-04 13:45:22.597 +00:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+SELECT CASE WHEN COUNT(*) = 0 THEN FALSE ELSE TRUE END
+FROM pg_class AS cls
+JOIN pg_namespace AS ns ON ns.oid = cls.relnamespace
+WHERE
+        cls.relkind IN ('r', 'v', 'm', 'f', 'p') AND
+        ns.nspname NOT IN ('pg_catalog', 'information_schema') AND
+        -- Exclude tables which are members of PG extensions
+        NOT EXISTS (
+            SELECT 1 FROM pg_depend WHERE
+                classid=(
+                    SELECT cls.oid
+                    FROM pg_class AS cls
+                             JOIN pg_namespace AS ns ON ns.oid = cls.relnamespace
+                    WHERE relname='pg_class' AND ns.nspname='pg_catalog'
+                ) AND
+                objid=cls.oid AND
+                deptype IN ('e', 'x')
+        )
+2022-07-04 13:45:22.656 +00:00 [INF] Creating key {a99d2faa-f841-49fe-b5c8-02fb4030bfd1} with creation date 2022-07-04 13:45:22Z, activation date 2022-07-04 13:45:22Z, and expiration date 2022-10-02 13:45:22Z.
+2022-07-04 13:45:22.661 +00:00 [WRN] No XML encryptor configured. Key {a99d2faa-f841-49fe-b5c8-02fb4030bfd1} may be persisted to storage in unencrypted form.
+2022-07-04 13:45:22.665 +00:00 [INF] Writing data to file '/root/.aspnet/DataProtection-Keys/key-a99d2faa-f841-49fe-b5c8-02fb4030bfd1.xml'.
+2022-07-04 13:45:22.923 +00:00 [INF] Now listening on: https://[::]:443
+2022-07-04 13:45:22.924 +00:00 [INF] Now listening on: http://[::]:80
+2022-07-04 13:45:22.928 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-04 13:45:22.928 +00:00 [INF] Hosting environment: Development
+2022-07-04 13:45:22.929 +00:00 [INF] Content root path: /app/
+2022-07-04 13:45:23.614 +00:00 [INF] Request starting HTTP/2 GET https://localhost:5102/swagger - -
+2022-07-04 13:45:23.754 +00:00 [INF] Request starting HTTP/2 GET https://localhost:5102/swagger/index.html - -
+2022-07-04 13:45:23.766 +00:00 [INF] Request finished HTTP/2 GET https://localhost:5102/swagger - - - 301 0 - 156.4595ms
+2022-07-04 13:45:23.850 +00:00 [INF] Request finished HTTP/2 GET https://localhost:5102/swagger/index.html - - - 200 - text/html;charset=utf-8 95.8378ms
+2022-07-04 13:45:23.890 +00:00 [INF] Request starting HTTP/2 GET https://localhost:5102/swagger/swagger-ui-bundle.js - -
+2022-07-04 13:45:23.891 +00:00 [INF] Request starting HTTP/2 GET https://localhost:5102/swagger/swagger-ui-standalone-preset.js - -
+2022-07-04 13:45:23.896 +00:00 [INF] Request starting HTTP/2 GET https://localhost:5102/swagger/swagger-ui.css - -
+2022-07-04 13:45:24.290 +00:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-07-04 13:45:24.295 +00:00 [INF] Request finished HTTP/2 GET https://localhost:5102/swagger/swagger-ui.css - - - 200 143943 text/css 399.2067ms
+2022-07-04 13:45:24.343 +00:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-07-04 13:45:24.345 +00:00 [INF] Request finished HTTP/2 GET https://localhost:5102/swagger/swagger-ui-standalone-preset.js - - - 200 339486 application/javascript 454.3691ms
+2022-07-04 13:45:24.570 +00:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-07-04 13:45:24.571 +00:00 [INF] Request finished HTTP/2 GET https://localhost:5102/swagger/swagger-ui-bundle.js - - - 200 1095087 application/javascript 681.2403ms
+2022-07-04 13:45:24.947 +00:00 [INF] Request starting HTTP/2 GET https://localhost:5102/swagger/v1/swagger.json - -
+2022-07-04 13:45:24.969 +00:00 [INF] Request starting HTTP/2 GET https://localhost:5102/swagger/favicon-32x32.png - -
+2022-07-04 13:45:24.970 +00:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2022-07-04 13:45:24.970 +00:00 [INF] Request finished HTTP/2 GET https://localhost:5102/swagger/favicon-32x32.png - - - 200 628 image/png 1.4111ms
+2022-07-04 13:45:25.102 +00:00 [INF] Request finished HTTP/2 GET https://localhost:5102/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 155.2789ms
+2022-07-04 13:51:12.873 +00:00 [INF] Request starting HTTP/2 GET https://localhost:5102/swagger/index.html - -
+2022-07-04 13:51:12.874 +00:00 [INF] Request finished HTTP/2 GET https://localhost:5102/swagger/index.html - - - 200 - text/html;charset=utf-8 1.3399ms
+2022-07-04 13:51:13.308 +00:00 [INF] Request starting HTTP/2 GET https://localhost:5102/swagger/v1/swagger.json - -
+2022-07-04 13:51:13.335 +00:00 [INF] Request finished HTTP/2 GET https://localhost:5102/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 47.3472ms
+2022-07-04 13:58:55.425 +00:00 [INF] Request starting HTTP/2 GET https://localhost:5102/swagger/index.html - -
+2022-07-04 13:58:55.469 +00:00 [INF] Request finished HTTP/2 GET https://localhost:5102/swagger/index.html - - - 200 - text/html;charset=utf-8 44.3604ms
+2022-07-04 13:58:55.933 +00:00 [INF] Request starting HTTP/2 GET https://localhost:5102/swagger/v1/swagger.json - -
+2022-07-04 13:58:55.959 +00:00 [INF] Request finished HTTP/2 GET https://localhost:5102/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 26.2939ms
+2022-07-04 13:59:03.826 +00:00 [INF] Request starting HTTP/2 POST https://localhost:5102/Companies application/json-patch+json 101
+2022-07-04 13:59:03.833 +00:00 [INF] Executing endpoint 'Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.Create.HandleAsync (Nikan.Services.BasicData.WebApi)'
+2022-07-04 13:59:03.866 +00:00 [INF] Route matched with {action = "Handle", controller = "Create"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.CreateCompanyResponse]] HandleAsync(Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.CreateCompanyRequest, System.Threading.CancellationToken) on controller Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.Create (Nikan.Services.BasicData.WebApi).
+2022-07-04 13:59:04.078 +00:00 [INF] Entity Framework Core 6.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.5+9d79af6e2586d5d28da253ac075706a5575a1743' with options: None
+2022-07-04 13:59:04.470 +00:00 [INF] Executed DbCommand (50ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTimeOffset), @p3='?', @p4='?', @p5='?', @p6='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO company ("Id", "CreatedBy", "DateIssued", "EmailAddress", "Phone", "PostalAddress", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
+RETURNING xmin;
+2022-07-04 13:59:04.597 +00:00 [INF] Executing OkObjectResult, writing value of type 'Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.CreateCompanyResponse'.
+2022-07-04 13:59:04.668 +00:00 [INF] Executed action Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.Create.HandleAsync (Nikan.Services.BasicData.WebApi) in 796.5193ms
+2022-07-04 13:59:04.670 +00:00 [INF] Executed endpoint 'Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.Create.HandleAsync (Nikan.Services.BasicData.WebApi)'
+2022-07-04 13:59:04.679 +00:00 [INF] Request finished HTTP/2 POST https://localhost:5102/Companies application/json-patch+json 101 - 200 227 application/json;+charset=utf-8 853.1995ms
+2022-07-04 13:59:54.031 +00:00 [INF] Request starting HTTP/2 GET https://localhost:5102/Companies/dde98b7f-4757-4869-b1b0-7e879011d6e4 - -
+2022-07-04 13:59:54.033 +00:00 [INF] Executing endpoint 'Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.GetById.HandleAsync (Nikan.Services.BasicData.WebApi)'
+2022-07-04 13:59:54.039 +00:00 [INF] Route matched with {action = "Handle", controller = "GetById"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.GetCompanyByIdResponse]] HandleAsync(Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.GetCompanyByIdRequest, System.Threading.CancellationToken) on controller Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.GetById (Nikan.Services.BasicData.WebApi).
+2022-07-04 13:59:54.091 +00:00 [INF] Entity Framework Core 6.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.5+9d79af6e2586d5d28da253ac075706a5575a1743' with options: None
+2022-07-04 13:59:54.633 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."CreatedBy", c."DateIssued", c."EmailAddress", c."Phone", c."PostalAddress", c."Title", c.xmin
+FROM company AS c
+WHERE c."Id" = @__get_Item_0
+LIMIT 1
+2022-07-04 13:59:54.687 +00:00 [INF] Executing OkObjectResult, writing value of type 'Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.GetCompanyByIdResponse'.
+2022-07-04 13:59:54.691 +00:00 [INF] Executed action Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.GetById.HandleAsync (Nikan.Services.BasicData.WebApi) in 651.5564ms
+2022-07-04 13:59:54.692 +00:00 [INF] Executed endpoint 'Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.GetById.HandleAsync (Nikan.Services.BasicData.WebApi)'
+2022-07-04 13:59:54.692 +00:00 [INF] Request finished HTTP/2 GET https://localhost:5102/Companies/dde98b7f-4757-4869-b1b0-7e879011d6e4 - - - 200 227 application/json;+charset=utf-8 661.7526ms
+2022-07-04 14:02:43.316 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5101/Companies/b5b943b9-0901-4aa4-85a2-f97ab73fc640 - -
+2022-07-04 14:02:43.322 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5101/Companies/b5b943b9-0901-4aa4-85a2-f97ab73fc640 - - - 307 0 - 6.3639ms
+2022-07-04 14:02:43.362 +00:00 [INF] Request starting HTTP/1.1 GET https://localhost:5102/Companies/b5b943b9-0901-4aa4-85a2-f97ab73fc640 - -
+2022-07-04 14:02:43.363 +00:00 [INF] Executing endpoint 'Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.GetById.HandleAsync (Nikan.Services.BasicData.WebApi)'
+2022-07-04 14:02:43.363 +00:00 [INF] Route matched with {action = "Handle", controller = "GetById"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.GetCompanyByIdResponse]] HandleAsync(Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.GetCompanyByIdRequest, System.Threading.CancellationToken) on controller Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.GetById (Nikan.Services.BasicData.WebApi).
+2022-07-04 14:02:43.365 +00:00 [INF] Entity Framework Core 6.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.5+9d79af6e2586d5d28da253ac075706a5575a1743' with options: None
+2022-07-04 14:02:43.393 +00:00 [INF] Executed DbCommand (23ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."CreatedBy", c."DateIssued", c."EmailAddress", c."Phone", c."PostalAddress", c."Title", c.xmin
+FROM company AS c
+WHERE c."Id" = @__get_Item_0
+LIMIT 1
+2022-07-04 14:02:43.400 +00:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2022-07-04 14:02:43.418 +00:00 [INF] Executed action Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.GetById.HandleAsync (Nikan.Services.BasicData.WebApi) in 53.8801ms
+2022-07-04 14:02:43.419 +00:00 [INF] Executed endpoint 'Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.GetById.HandleAsync (Nikan.Services.BasicData.WebApi)'
+2022-07-04 14:02:43.419 +00:00 [INF] Request finished HTTP/1.1 GET https://localhost:5102/Companies/b5b943b9-0901-4aa4-85a2-f97ab73fc640 - - - 404 161 application/problem+json;+charset=utf-8 57.2123ms
+2022-07-04 14:02:52.328 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5101/Companies application/json 182
+2022-07-04 14:02:52.330 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5101/Companies application/json 182 - 307 0 - 1.8982ms
+2022-07-04 14:02:52.336 +00:00 [INF] Request starting HTTP/1.1 POST https://localhost:5102/Companies application/json 182
+2022-07-04 14:02:52.336 +00:00 [INF] Executing endpoint 'Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.Create.HandleAsync (Nikan.Services.BasicData.WebApi)'
+2022-07-04 14:02:52.337 +00:00 [INF] Route matched with {action = "Handle", controller = "Create"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.CreateCompanyResponse]] HandleAsync(Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.CreateCompanyRequest, System.Threading.CancellationToken) on controller Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.Create (Nikan.Services.BasicData.WebApi).
+2022-07-04 14:02:52.340 +00:00 [INF] Entity Framework Core 6.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.5+9d79af6e2586d5d28da253ac075706a5575a1743' with options: None
+2022-07-04 14:02:52.346 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTimeOffset), @p3='?', @p4='?', @p5='?', @p6='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO company ("Id", "CreatedBy", "DateIssued", "EmailAddress", "Phone", "PostalAddress", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
+RETURNING xmin;
+2022-07-04 14:02:52.358 +00:00 [INF] Executing OkObjectResult, writing value of type 'Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.CreateCompanyResponse'.
+2022-07-04 14:02:52.359 +00:00 [INF] Executed action Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.Create.HandleAsync (Nikan.Services.BasicData.WebApi) in 22.2387ms
+2022-07-04 14:02:52.360 +00:00 [INF] Executed endpoint 'Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.Create.HandleAsync (Nikan.Services.BasicData.WebApi)'
+2022-07-04 14:02:52.363 +00:00 [INF] Request finished HTTP/1.1 POST https://localhost:5102/Companies application/json 182 - 200 304 application/json;+charset=utf-8 27.2846ms
+2022-07-04 14:03:05.216 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5101/Companies/f5862caf-2eb3-4100-aca4-25882afeb8ee - -
+2022-07-04 14:03:05.218 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5101/Companies/f5862caf-2eb3-4100-aca4-25882afeb8ee - - - 307 0 - 2.1955ms
+2022-07-04 14:03:05.224 +00:00 [INF] Request starting HTTP/1.1 GET https://localhost:5102/Companies/f5862caf-2eb3-4100-aca4-25882afeb8ee - -
+2022-07-04 14:03:05.224 +00:00 [INF] Executing endpoint 'Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.GetById.HandleAsync (Nikan.Services.BasicData.WebApi)'
+2022-07-04 14:03:05.225 +00:00 [INF] Route matched with {action = "Handle", controller = "GetById"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.GetCompanyByIdResponse]] HandleAsync(Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.GetCompanyByIdRequest, System.Threading.CancellationToken) on controller Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.GetById (Nikan.Services.BasicData.WebApi).
+2022-07-04 14:03:05.226 +00:00 [INF] Entity Framework Core 6.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.5+9d79af6e2586d5d28da253ac075706a5575a1743' with options: None
+2022-07-04 14:03:05.231 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."CreatedBy", c."DateIssued", c."EmailAddress", c."Phone", c."PostalAddress", c."Title", c.xmin
+FROM company AS c
+WHERE c."Id" = @__get_Item_0
+LIMIT 1
+2022-07-04 14:03:05.238 +00:00 [INF] Executing OkObjectResult, writing value of type 'Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.GetCompanyByIdResponse'.
+2022-07-04 14:03:05.239 +00:00 [INF] Executed action Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.GetById.HandleAsync (Nikan.Services.BasicData.WebApi) in 13.6251ms
+2022-07-04 14:03:05.239 +00:00 [INF] Executed endpoint 'Nikan.Services.BasicData.WebApi.V1.Endpoints.CompanyEndPoints.GetById.HandleAsync (Nikan.Services.BasicData.WebApi)'
+2022-07-04 14:03:05.239 +00:00 [INF] Request finished HTTP/1.1 GET https://localhost:5102/Companies/f5862caf-2eb3-4100-aca4-25882afeb8ee - - - 200 303 application/json;+charset=utf-8 15.7813ms

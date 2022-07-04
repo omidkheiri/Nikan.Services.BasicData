@@ -10,30 +10,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Nikan.Services.BasicData.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
     <AssemblyName>Nikan.Services.BasicData.$(MSBuildProjectName)</AssemblyName>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..</DockerfileContext>
+    <DockerComposeProjectPath>..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Controllers\**" />
-    <Compile Remove="Pages\**" />
-    <Compile Remove="V1\Endpoints\ProjectEndpoints\**" />
-    <Compile Remove="ViewModels\**" />
-    <Compile Remove="Views\**" />
-    <Content Remove="Controllers\**" />
-    <Content Remove="Pages\**" />
-    <Content Remove="V1\Endpoints\ProjectEndpoints\**" />
-    <Content Remove="ViewModels\**" />
-    <Content Remove="Views\**" />
-    <EmbeddedResource Remove="Controllers\**" />
-    <EmbeddedResource Remove="Pages\**" />
-    <EmbeddedResource Remove="V1\Endpoints\ProjectEndpoints\**" />
-    <EmbeddedResource Remove="ViewModels\**" />
-    <EmbeddedResource Remove="Views\**" />
-    <None Remove="Controllers\**" />
-    <None Remove="Pages\**" />
-    <None Remove="V1\Endpoints\ProjectEndpoints\**" />
-    <None Remove="ViewModels\**" />
-    <None Remove="Views\**" />
-  </ItemGroup>
+  <PropertyGroup>
+    <UserSecretsId>project-8084c8e7-0000-0000-b266-b33f42dd88c0</UserSecretsId>
+  </PropertyGroup>
 
 
   <ItemGroup>
@@ -44,6 +27,7 @@
     <PackageReference Include="MediatR" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets"  />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" PrivateAssets="All" />
     <PackageReference Include="Serilog.Sinks.ApplicationInsights" />
     <PackageReference Include="Swashbuckle.AspNetCore" />
