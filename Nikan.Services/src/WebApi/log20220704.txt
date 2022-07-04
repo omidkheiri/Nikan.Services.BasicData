@@ -2824,3 +2824,43 @@ WHERE
 2022-07-04 15:42:51.614 +00:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
 2022-07-04 15:42:51.614 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:6993/swagger/favicon-32x32.png - - - 200 628 image/png 0.7824ms
 2022-07-04 15:42:51.744 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:6993/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 153.4228ms
+2022-07-04 16:09:20.104 +00:00 [INF] User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2022-07-04 16:09:21.237 +00:00 [INF] Entity Framework Core 6.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.5+9d79af6e2586d5d28da253ac075706a5575a1743' with options: None
+2022-07-04 16:09:21.793 +00:00 [INF] Executed DbCommand (98ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2022-07-04 16:09:21.848 +00:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2022-07-04 16:09:21.868 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2022-07-04 16:09:21.894 +00:00 [INF] No migrations were applied. The database is already up to date.
+2022-07-04 16:09:21.939 +00:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+SELECT CASE WHEN COUNT(*) = 0 THEN FALSE ELSE TRUE END
+FROM pg_class AS cls
+JOIN pg_namespace AS ns ON ns.oid = cls.relnamespace
+WHERE
+        cls.relkind IN ('r', 'v', 'm', 'f', 'p') AND
+        ns.nspname NOT IN ('pg_catalog', 'information_schema') AND
+        -- Exclude tables which are members of PG extensions
+        NOT EXISTS (
+            SELECT 1 FROM pg_depend WHERE
+                classid=(
+                    SELECT cls.oid
+                    FROM pg_class AS cls
+                             JOIN pg_namespace AS ns ON ns.oid = cls.relnamespace
+                    WHERE relname='pg_class' AND ns.nspname='pg_catalog'
+                ) AND
+                objid=cls.oid AND
+                deptype IN ('e', 'x')
+        )
+2022-07-04 16:09:22.086 +00:00 [INF] Now listening on: http://[::]:80
+2022-07-04 16:09:22.092 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-04 16:09:22.093 +00:00 [INF] Hosting environment: Development
+2022-07-04 16:09:22.094 +00:00 [INF] Content root path: /app/
+2022-07-04 16:09:22.598 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:6993/swagger/index.html - -
+2022-07-04 16:09:22.633 +00:00 [WRN] Failed to determine the https port for redirect.
+2022-07-04 16:09:22.781 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:6993/swagger/index.html - - - 200 - text/html;charset=utf-8 185.9805ms
+2022-07-04 16:09:23.210 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:6993/swagger/v1/swagger.json - -
+2022-07-04 16:09:23.362 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:6993/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 151.0792ms
