@@ -2,7 +2,7 @@
 using Nikan.Services.BasicData.SharedKernel;
 using Nikan.Services.BasicData.SharedKernel.Interfaces;
 
-namespace Nikan.Services.BasicData.Core.AccountAggregate;
+namespace Nikan.Services.BasicData.Core.CompanyAggregate;
 
 public class Company : EntityBase, IAggregateRoot
 {
@@ -12,7 +12,7 @@ public class Company : EntityBase, IAggregateRoot
     DateIssued = DateTimeOffset.Now;
   }
 
-  public Company(string title, string phone, string emailAddress, string postalAddress,
+  public Company(string? title, string? phone, string? emailAddress, string? postalAddress,
     Guid createdBy) : this()
   {
     Title = Guard.Against.NullOrEmpty(title, nameof(title));
@@ -24,12 +24,12 @@ public class Company : EntityBase, IAggregateRoot
   }
 
 
-  public Guid Id { get; }
 
-  public string Title { get; }
-  public string Phone { get; }
-  public string EmailAddress { get; }
-  public string PostalAddress { get; }
-  public DateTimeOffset DateIssued { get; }
-  public Guid CreatedBy { get; }
+
+  public string Title { get; private set; } = "";
+  public string Phone { get; private set; } = "";
+  public string EmailAddress { get; private set; } = "";
+  public string? PostalAddress { get; private set; } = "";
+  public DateTimeOffset DateIssued { get; private set; }
+  public Guid CreatedBy { get; private set; }
 }

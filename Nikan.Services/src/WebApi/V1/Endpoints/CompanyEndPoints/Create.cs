@@ -1,7 +1,7 @@
 ﻿using Ardalis.ApiEndpoints;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Nikan.Services.BasicData.Core.AccountAggregate;
+using Nikan.Services.BasicData.Core.CompanyAggregate;
 using Nikan.Services.BasicData.SharedKernel.Interfaces;
 using Swashbuckle.AspNetCore.Annotations;
 

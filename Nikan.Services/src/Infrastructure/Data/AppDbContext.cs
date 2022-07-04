@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 using Microsoft.EntityFrameworkCore;
-using Nikan.Services.BasicData.Core.AccountAggregate;
+using Nikan.Services.BasicData.Core.CompanyAggregate;
 using Nikan.Services.BasicData.SharedKernel;
 using Nikan.Services.BasicData.SharedKernel.Interfaces;
 

@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{106AE906-507
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B31B4797-1D9F-4288-808C-BE9A31A98C7D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "src\Web\Web.csproj", "{C9751CB7-4CD6-4633-A99A-4F6ADD525437}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "src\WebApi\WebApi.csproj", "{C9751CB7-4CD6-4633-A99A-4F6ADD525437}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "src\Core\Core.csproj", "{4548EB20-1D1B-477B-AF6E-DD55653A6583}"
 EndProject
@@ -33,6 +33,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedKernel", "src\SharedKernel\SharedKernel.csproj", "{744AD1DC-E83E-4ACE-BE57-395395D6E357}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "tests\UnitTests\UnitTests.csproj", "{1DC7F5A0-DDF7-4975-84EB-05F4FC1B6AB5}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{87A19561-6FF8-43B9-955B-738315B9A005}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -128,6 +130,18 @@ Global
 		{1DC7F5A0-DDF7-4975-84EB-05F4FC1B6AB5}.Release|x64.Build.0 = Release|Any CPU
 		{1DC7F5A0-DDF7-4975-84EB-05F4FC1B6AB5}.Release|x86.ActiveCfg = Release|Any CPU
 		{1DC7F5A0-DDF7-4975-84EB-05F4FC1B6AB5}.Release|x86.Build.0 = Release|Any CPU
+		{87A19561-6FF8-43B9-955B-738315B9A005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87A19561-6FF8-43B9-955B-738315B9A005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87A19561-6FF8-43B9-955B-738315B9A005}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{87A19561-6FF8-43B9-955B-738315B9A005}.Debug|x64.Build.0 = Debug|Any CPU
+		{87A19561-6FF8-43B9-955B-738315B9A005}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{87A19561-6FF8-43B9-955B-738315B9A005}.Debug|x86.Build.0 = Debug|Any CPU
+		{87A19561-6FF8-43B9-955B-738315B9A005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87A19561-6FF8-43B9-955B-738315B9A005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87A19561-6FF8-43B9-955B-738315B9A005}.Release|x64.ActiveCfg = Release|Any CPU
+		{87A19561-6FF8-43B9-955B-738315B9A005}.Release|x64.Build.0 = Release|Any CPU
+		{87A19561-6FF8-43B9-955B-738315B9A005}.Release|x86.ActiveCfg = Release|Any CPU
+		{87A19561-6FF8-43B9-955B-738315B9A005}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure;
-using Nikan.Services.BasicData.Core.AccountAggregate;
+using Nikan.Services.BasicData.Core.CompanyAggregate;
 
 namespace Nikan.Services.BasicData.Infrastructure.Data.Config;
 
@@ -12,7 +12,7 @@ public class CompanyConfiguration : IEntityTypeConfiguration<Company>
     builder.ToTable("company");
     builder.HasKey(company => company.Id);
     builder.UseXminAsConcurrencyToken();
- 
+
     builder.Property(company => company.Title).IsRequired();
     builder.Property(company => company.Phone).IsRequired();
     builder.Property(company => company.EmailAddress).IsRequired();

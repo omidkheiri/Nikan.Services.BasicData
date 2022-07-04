@@ -25,7 +25,7 @@ services:
     image: ${DOCKER_REGISTRY-}nikan.services.basicdata.webapi
     build:
       context: .
-      dockerfile: Nikan.Services/src/WebApi/Dockerfile
+      dockerfile: src/WebApi/Dockerfile
     ports:
       - "5102:443"
       - "5101:80"

@@ -1,14 +1,14 @@
 ﻿using Ardalis.ListStartupServices;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Nikan.Services.BasicData.Core;
 using Nikan.Services.BasicData.Infrastructure;
 using Nikan.Services.BasicData.Infrastructure.Data;
-using Serilog;
-using AutoMapper;
 using Nikan.Services.BasicData.WebApi.V1.Endpoints.Mapper;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 

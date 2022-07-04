@@ -6,7 +6,7 @@ namespace Nikan.Services.BasicData.SharedKernel;
 public abstract class EntityBase
 {
   private readonly List<DomainEventBase> _domainEvents = new();
-  public int Id { get; set; }
+  public Guid Id { get; set; }
 
   [NotMapped] public IEnumerable<DomainEventBase> DomainEvents => _domainEvents.AsReadOnly();
 

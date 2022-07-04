@@ -2,7 +2,7 @@
 using Autofac;
 using MediatR;
 using MediatR.Pipeline;
-using Nikan.Services.BasicData.Core.AccountAggregate;
+using Nikan.Services.BasicData.Core.CompanyAggregate;
 using Nikan.Services.BasicData.Core.Interfaces;
 using Nikan.Services.BasicData.Infrastructure.Data;
 using Nikan.Services.BasicData.SharedKernel;

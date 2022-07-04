@@ -6,14 +6,14 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["Nikan.Services/nuget.config", "Nikan.Services/"]
-COPY ["Nikan.Services/src/WebApi/WebApi.csproj", "Nikan.Services/src/WebApi/"]
-COPY ["Nikan.Services/src/Infrastructure/Infrastructure.csproj", "Nikan.Services/src/Infrastructure/"]
-COPY ["Nikan.Services/src/SharedKernel/SharedKernel.csproj", "Nikan.Services/src/SharedKernel/"]
-COPY ["Nikan.Services/src/Core/Core.csproj", "Nikan.Services/src/Core/"]
-RUN dotnet restore "Nikan.Services/src/WebApi/WebApi.csproj"
+COPY ["nuget.config", "."]
+COPY ["src/WebApi/WebApi.csproj", "src/WebApi/"]
+COPY ["src/Infrastructure/Infrastructure.csproj", "src/Infrastructure/"]
+COPY ["src/SharedKernel/SharedKernel.csproj", "src/SharedKernel/"]
+COPY ["src/Core/Core.csproj", "src/Core/"]
+RUN dotnet restore "src/WebApi/WebApi.csproj"
 COPY . .
-WORKDIR "/src/Nikan.Services/src/WebApi"
+WORKDIR "/src/src/WebApi"
 RUN dotnet build "WebApi.csproj" -c Release -o /app/build
 
 FROM build AS publish
