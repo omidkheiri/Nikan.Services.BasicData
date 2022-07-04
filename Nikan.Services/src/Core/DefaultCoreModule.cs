@@ -1,6 +1,6 @@
 ﻿using Autofac;
 
-namespace Nikan.Services.CrmProfiles.Core;
+namespace Nikan.Services.BasicData.Core;
 
 public class DefaultCoreModule : Module
 {

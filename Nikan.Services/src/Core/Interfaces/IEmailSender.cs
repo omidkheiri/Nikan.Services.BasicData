@@ -1,4 +1,4 @@
-﻿namespace Nikan.Services.CrmProfiles.Core.Interfaces;
+﻿namespace Nikan.Services.BasicData.Core.Interfaces;
 
 public interface IEmailSender
 {

@@ -1,8 +1,8 @@
 ﻿using Ardalis.GuardClauses;
-using Nikan.Services.CrmProfiles.SharedKernel;
-using Nikan.Services.CrmProfiles.SharedKernel.Interfaces;
+using Nikan.Services.BasicData.SharedKernel;
+using Nikan.Services.BasicData.SharedKernel.Interfaces;
 
-namespace Nikan.Services.CrmProfiles.Core.AccountAggregate;
+namespace Nikan.Services.BasicData.Core.AccountAggregate;
 
 public class Company : EntityBase, IAggregateRoot
 {
@@ -12,20 +12,20 @@ public class Company : EntityBase, IAggregateRoot
     DateIssued = DateTimeOffset.Now;
   }
 
-  public Company(Guid companyId, string title, string phone, string emailAddress, string postalAddress,
+  public Company(string title, string phone, string emailAddress, string postalAddress,
     Guid createdBy) : this()
   {
     Title = Guard.Against.NullOrEmpty(title, nameof(title));
-    Phone = Guard.Against.NullOrEmpty(title, nameof(title));
-    EmailAddress = Guard.Against.NullOrEmpty(title, nameof(title));
+    Phone = Guard.Against.NullOrEmpty(phone, nameof(phone));
+    EmailAddress = Guard.Against.NullOrEmpty(emailAddress, nameof(emailAddress));
     PostalAddress = postalAddress;
     CreatedBy = createdBy;
-    CompanyId = companyId;
+
   }
 
 
   public Guid Id { get; }
-  public Guid CompanyId { get; }
+
   public string Title { get; }
   public string Phone { get; }
   public string EmailAddress { get; }

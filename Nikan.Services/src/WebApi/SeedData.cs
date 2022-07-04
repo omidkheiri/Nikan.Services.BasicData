@@ -1,11 +1,11 @@
 ﻿//using Microsoft.EntityFrameworkCore;
-//using Nikan.Services.CrmProfiles.Core.ProjectAggregate;
-//using Nikan.Services.CrmProfiles.Infrastructure.Data;
+//using Nikan.Services.BasicData.Core.ProjectAggregate;
+//using Nikan.Services.BasicData.Infrastructure.Data;
 //using System;
 //using System.Linq;
 //using Microsoft.Extensions.DependencyInjection;
 
-//namespace Nikan.Services.CrmProfiles.WebApi
+//namespace Nikan.Services.BasicData.WebApi
 //{
 //  public static class SeedData
 //  {

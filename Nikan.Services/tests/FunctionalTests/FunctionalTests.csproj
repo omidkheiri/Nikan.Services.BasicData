@@ -33,8 +33,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Nikan.Services.CrmProfiles.Web\WebApi.csproj" />
-    <ProjectReference Include="..\Nikan.Services.CrmProfiles.UnitTests\UnitTests.csproj" />
+    <ProjectReference Include="..\..\src\WebApi\WebApi.csproj" />
+    <ProjectReference Include="..\UnitTests\UnitTests.csproj" />
   </ItemGroup>
 
 </Project>

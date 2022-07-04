@@ -1,8 +1,8 @@
 ﻿using System.Net.Mail;
 using Microsoft.Extensions.Logging;
-using Nikan.Services.CrmProfiles.Core.Interfaces;
+using Nikan.Services.BasicData.Core.Interfaces;
 
-namespace Nikan.Services.CrmProfiles.Infrastructure;
+namespace Nikan.Services.BasicData.Infrastructure;
 
 public class EmailSender : IEmailSender
 {
@@ -16,7 +16,7 @@ public class EmailSender : IEmailSender
   public async Task SendEmailAsync(string to, string from, string subject, string body)
   {
     var emailClient = new SmtpClient("localhost");
-    var message = new MailMessage {From = new MailAddress(from), Subject = subject, Body = body};
+    var message = new MailMessage { From = new MailAddress(from), Subject = subject, Body = body };
     message.To.Add(new MailAddress(to));
     await emailClient.SendMailAsync(message);
     _logger.LogWarning("Sending email to {to} from {from} with subject {subject}.", to, from, subject);

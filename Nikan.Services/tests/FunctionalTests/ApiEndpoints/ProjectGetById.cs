@@ -1,8 +1,8 @@
 ﻿//using Ardalis.HttpClientTestExtensions;
-//using Nikan.Services.CrmProfiles.WebApi;
+//using Nikan.Services.BasicData.WebApi;
 //using Xunit;
 
-//namespace Nikan.Services.CrmProfiles.FunctionalTests.ApiEndpoints;
+//namespace Nikan.Services.BasicData.FunctionalTests.ApiEndpoints;
 
 //[Collection("Sequential")]
 //public class ProjectGetById : IClassFixture<CustomWebApplicationFactory<WebMarker>>

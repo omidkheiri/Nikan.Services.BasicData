@@ -50,14 +50,15 @@
     <PackageReference Include="Serilog.AspNetCore" />
     <PackageReference Include="NETStandard.Library" />
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" />
+    <PackageReference Include="AutoMapper" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="V1\Filters\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="V1\Endpoints\" />
   </ItemGroup>
 
 </Project>

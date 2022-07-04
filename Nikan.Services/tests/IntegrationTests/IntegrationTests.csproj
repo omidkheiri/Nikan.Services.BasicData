@@ -25,8 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Nikan.Services.CrmProfiles.Infrastructure\Infrastructure.csproj" />
-    <ProjectReference Include="..\Nikan.Services.CrmProfiles.UnitTests\UnitTests.csproj" />
+    <ProjectReference Include="..\..\src\Infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="..\UnitTests\UnitTests.csproj" />
   </ItemGroup>
 
   <ItemGroup>

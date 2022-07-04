@@ -1,4 +1,4 @@
-﻿namespace Nikan.Services.CrmProfiles.SharedKernel.Interfaces;
+﻿namespace Nikan.Services.BasicData.SharedKernel.Interfaces;
 
 public interface IDomainEventDispatcher
 {

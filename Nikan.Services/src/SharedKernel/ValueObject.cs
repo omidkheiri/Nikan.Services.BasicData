@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace Nikan.Services.CrmProfiles.SharedKernel;
+namespace Nikan.Services.BasicData.SharedKernel;
 
 // source: https://github.com/jhewlett/ValueObject
 public abstract class ValueObject : IEquatable<ValueObject>

@@ -1,10 +1,10 @@
 ﻿using System.Reflection;
 using Microsoft.EntityFrameworkCore;
-using Nikan.Services.CrmProfiles.Core.AccountAggregate;
-using Nikan.Services.CrmProfiles.SharedKernel;
-using Nikan.Services.CrmProfiles.SharedKernel.Interfaces;
+using Nikan.Services.BasicData.Core.AccountAggregate;
+using Nikan.Services.BasicData.SharedKernel;
+using Nikan.Services.BasicData.SharedKernel.Interfaces;
 
-namespace Nikan.Services.CrmProfiles.Infrastructure.Data;
+namespace Nikan.Services.BasicData.Infrastructure.Data;
 
 public class AppDbContext : DbContext
 {

@@ -1,7 +1,7 @@
 ﻿using Ardalis.Specification.EntityFrameworkCore;
-using Nikan.Services.CrmProfiles.SharedKernel.Interfaces;
+using Nikan.Services.BasicData.SharedKernel.Interfaces;
 
-namespace Nikan.Services.CrmProfiles.Infrastructure.Data;
+namespace Nikan.Services.BasicData.Infrastructure.Data;
 
 // inherit from Ardalis.Specification type
 public class EfRepository<T> : RepositoryBase<T>, IReadRepository<T>, IRepository<T> where T : class, IAggregateRoot

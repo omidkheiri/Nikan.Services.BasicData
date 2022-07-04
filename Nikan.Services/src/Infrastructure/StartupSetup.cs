@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Nikan.Services.CrmProfiles.Infrastructure.Data;
+using Nikan.Services.BasicData.Infrastructure.Data;
 
-namespace Nikan.Services.CrmProfiles.Infrastructure;
+namespace Nikan.Services.BasicData.Infrastructure;
 
 public static class StartupSetup
 {

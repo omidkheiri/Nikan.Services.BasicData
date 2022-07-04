@@ -4,7 +4,7 @@
         "anonymousAuthentication": true,
         "launchUrl": "swagger",
         "iisExpress": {
-            "applicationUrl": "http://localhost:57678/",
+            "applicationUrl": "http://localhost:5101/",
             "sslPort": 0
         }
     },
@@ -17,13 +17,13 @@
                 "ASPNETCORE_ENVIRONMENT": "Development"
             }
         },
-        "Nikan.Services.CrmProfiles.Web": {
+        "Nikan.Services.BasicData.Web": {
             "commandName": "Project",
             "launchBrowser": true,
             "environmentVariables": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
             },
-            "applicationUrl": "http://localhost:57679/"
+            "applicationUrl": "http://localhost:5101/"
         }
     }
 }

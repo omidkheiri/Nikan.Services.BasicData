@@ -1,4 +1,4 @@
-﻿namespace Nikan.Services.CrmProfiles.SharedKernel.Interfaces;
+﻿namespace Nikan.Services.BasicData.SharedKernel.Interfaces;
 
 // Apply this marker interface only to aggregate root entities
 // Repositories will only work with aggregate roots, not their children

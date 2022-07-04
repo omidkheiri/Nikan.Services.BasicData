@@ -1,38 +1,38 @@
-﻿namespace Nikan.Services.CrmProfiles.UnitTests;
+﻿//namespace Nikan.Services.BasicData.UnitTests;
 
-// Learn more about test builders:
-// https://ardalis.com/improve-tests-with-the-builder-pattern-for-test-data
-public class ToDoItemBuilder
-{
-  private ToDoItem _todo = new ToDoItem();
+//// Learn more about test builders:
+//// https://ardalis.com/improve-tests-with-the-builder-pattern-for-test-data
+//public class ToDoItemBuilder
+//{
+//  private ToDoItem _todo = new ToDoItem();
 
-  public ToDoItemBuilder Id(int id)
-  {
-    _todo.Id = id;
-    return this;
-  }
+//  public ToDoItemBuilder Id(int id)
+//  {
+//    _todo.Id = id;
+//    return this;
+//  }
 
-  public ToDoItemBuilder Title(string title)
-  {
-    _todo.Title = title;
-    return this;
-  }
+//  public ToDoItemBuilder Title(string title)
+//  {
+//    _todo.Title = title;
+//    return this;
+//  }
 
-  public ToDoItemBuilder Description(string description)
-  {
-    _todo.Description = description;
-    return this;
-  }
+//  public ToDoItemBuilder Description(string description)
+//  {
+//    _todo.Description = description;
+//    return this;
+//  }
 
-  public ToDoItemBuilder WithDefaultValues()
-  {
-    _todo = new ToDoItem {Id = 1, Title = "Test Item", Description = "Test Description"};
+//  //public ToDoItemBuilder WithDefaultValues()
+//  //{
+//  //  _todo = new ToDoItem {Id = 1, Title = "Test Item", Description = "Test Description"};
 
-    return this;
-  }
+//  //  return this;
+//  //}
 
-  public ToDoItem Build()
-  {
-    return _todo;
-  }
-}
+//  //public ToDoItem Build()
+//  //{
+//  //  return _todo;
+//  //}
+//}
