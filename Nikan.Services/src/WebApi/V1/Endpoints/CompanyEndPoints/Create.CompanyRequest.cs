@@ -8,7 +8,7 @@ public class CreateCompanyRequest
 
   [Required] public string? Title { get; set; }
   [Required] public string? Phone { get; set; }
-  public string? EmailAddress { get; set; }
+  [Required] public string? EmailAddress { get; set; }
   public string? PostalAddress { get; set; }
 
 }

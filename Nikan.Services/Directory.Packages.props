@@ -38,5 +38,7 @@
     <PackageVersion Include="xunit.runner.visualstudio" Version="2.4.5" />
     <PackageVersion Include="AutoMapper" Version="11.0.1" />
     <PackageVersion Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.15.1" />
+    <PackageVersion Include="System.Linq.Dynamic.Core" Version="1.2.19" />
+
   </ItemGroup>
 </Project>

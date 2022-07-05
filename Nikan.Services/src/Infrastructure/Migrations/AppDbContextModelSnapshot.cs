@@ -22,7 +22,7 @@ namespace Nikan.Services.BasicData.Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Nikan.Services.BasicData.Core.AccountAggregate.Company", b =>
+            modelBuilder.Entity("Nikan.Services.BasicData.Core.CompanyAggregate.Company", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -31,7 +31,10 @@ namespace Nikan.Services.BasicData.Infrastructure.Migrations
                     b.Property<Guid>("CreatedBy")
                         .HasColumnType("uuid");
 
-                    b.Property<DateTimeOffset>("DateIssued")
+                    b.Property<DateTimeOffset>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTimeOffset>("DateModified")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("EmailAddress")
@@ -43,7 +46,6 @@ namespace Nikan.Services.BasicData.Infrastructure.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("PostalAddress")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Title")

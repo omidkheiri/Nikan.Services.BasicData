@@ -17,7 +17,8 @@ public class CompanyConfiguration : IEntityTypeConfiguration<Company>
     builder.Property(company => company.Phone).IsRequired();
     builder.Property(company => company.EmailAddress).IsRequired();
     builder.Property(company => company.PostalAddress);
-    builder.Property(company => company.DateIssued);
+    builder.Property(company => company.DateCreated);
+    builder.Property(company => company.DateModified);
     builder.Property(company => company.CreatedBy);
     builder.HasIndex(company => company.Title).IsUnique();
     builder.HasIndex(company => company.Phone);

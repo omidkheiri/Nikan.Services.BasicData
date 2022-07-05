@@ -5,8 +5,10 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Nikan.Services.BasicData.Core;
+using Nikan.Services.BasicData.Core.CompanyAggregate;
 using Nikan.Services.BasicData.Infrastructure;
 using Nikan.Services.BasicData.Infrastructure.Data;
+using Nikan.Services.BasicData.SharedKernel.Pagination;
 using Nikan.Services.BasicData.WebApi.V1.Endpoints.Mapper;
 using Serilog;
 
@@ -66,6 +68,7 @@ var config = new MapperConfiguration(cfg =>
 var mapper = config.CreateMapper();
 builder.Services.AddSingleton(mapper);
 
+//builder.Services.ConfigureRepositoryWrapper();
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

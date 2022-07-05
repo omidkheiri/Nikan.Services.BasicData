@@ -35,8 +35,8 @@ public class GetById : EndpointBaseAsync.WithRequest<GetCompanyByIdRequest>
     var entity = await _repository.GetByIdAsync(request.CompanyId); // TODO: pass cancellation token
     if (entity == null) return NotFound();
 
-
-    return Ok(mapper.Map<GetCompanyByIdResponse>(entity));
+    var res = mapper.Map<GetCompanyByIdResponse>(entity);
+    return Ok(res);
 
 
 

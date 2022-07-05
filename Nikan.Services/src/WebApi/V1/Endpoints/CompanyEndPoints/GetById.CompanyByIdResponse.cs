@@ -2,23 +2,15 @@
 
 public class GetCompanyByIdResponse
 {
-  public GetCompanyByIdResponse(Guid id, string title, string phone, string emailAddress, string postalAddress, DateTimeOffset dateIssued, Guid createdBy)
-  {
-    Id = id;
-    Title = title;
-    Phone = phone;
-    EmailAddress = emailAddress;
-    PostalAddress = postalAddress;
-    DateIssued = dateIssued;
-    CreatedBy = createdBy;
-  }
 
 
-  public Guid Id { get; }
-  public string Title { get; }
-  public string Phone { get; }
-  public string EmailAddress { get; }
-  public string PostalAddress { get; }
-  public DateTimeOffset DateIssued { get; }
+
+  public Guid Id { get; set; }
+  public string? Title { get; set; }
+  public string? Phone { get; set; }
+  public string? EmailAddress { get; set; }
+  public string? PostalAddress { get; set; }
+  public DateTimeOffset DateCreated { get; set; }
+  public DateTimeOffset DateModified { get; set; }
   public Guid CreatedBy { get; }
 }

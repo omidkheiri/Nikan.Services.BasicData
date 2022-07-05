@@ -11,6 +11,7 @@ public class MappingProfile : Profile
   {
     CreateMap<Company, CreateCompanyResponse>();
     CreateMap<Company, GetCompanyByIdResponse>();
+    CreateMap<Company, UpdateCompanyResponse>();
 
   }
 }

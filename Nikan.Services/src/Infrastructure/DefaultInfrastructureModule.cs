@@ -7,6 +7,7 @@ using Nikan.Services.BasicData.Core.Interfaces;
 using Nikan.Services.BasicData.Infrastructure.Data;
 using Nikan.Services.BasicData.SharedKernel;
 using Nikan.Services.BasicData.SharedKernel.Interfaces;
+using Nikan.Services.BasicData.SharedKernel.Pagination;
 using Module = Autofac.Module;
 
 namespace Nikan.Services.BasicData.Infrastructure;
@@ -20,7 +21,7 @@ public class DefaultInfrastructureModule : Module
   {
     _isDevelopment = isDevelopment;
     var coreAssembly =
-      Assembly.GetAssembly(typeof(Company)); // TODO: Replace "Project" with any type from your Core project
+      Assembly.GetAssembly(typeof(Company)); // TODO: Replace "Company" with any type from your Core project
     var infrastructureAssembly = Assembly.GetAssembly(typeof(StartupSetup));
     if (coreAssembly != null)
     {
@@ -75,6 +76,7 @@ public class DefaultInfrastructureModule : Module
       return t => c.Resolve(t);
     });
 
+
     var mediatrOpenTypes = new[]
     {
       typeof(IRequestHandler<,>), typeof(IRequestExceptionHandler<,,>), typeof(IRequestExceptionAction<,>),
@@ -101,5 +103,6 @@ public class DefaultInfrastructureModule : Module
   private void RegisterProductionOnlyDependencies(ContainerBuilder builder)
   {
     // TODO: Add production only services
+    builder.RegisterType<SortHelper<Company>>().As<ISortHelper<Company>>().InstancePerLifetimeScope();
   }
 }
