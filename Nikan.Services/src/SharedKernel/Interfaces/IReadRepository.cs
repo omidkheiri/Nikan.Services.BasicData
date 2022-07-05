@@ -1,6 +1,6 @@
 ﻿using Ardalis.Specification;
 
-namespace Nikan.Services.CrmProfiles.SharedKernel.Interfaces;
+namespace Nikan.Services.BasicData.SharedKernel.Interfaces;
 
 public interface IReadRepository<T> : IReadRepositoryBase<T> where T : class, IAggregateRoot
 {

@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
-using Nikan.Services.CrmProfiles.Infrastructure.Data;
-using Nikan.Services.CrmProfiles.SharedKernel.Interfaces;
+using Nikan.Services.BasicData.Infrastructure.Data;
+using Nikan.Services.BasicData.SharedKernel.Interfaces;
 
-namespace Nikan.Services.CrmProfiles.IntegrationTests.Data;
+namespace Nikan.Services.BasicData.IntegrationTests.Data;
 
 public abstract class BaseEfRepoTestFixture
 {

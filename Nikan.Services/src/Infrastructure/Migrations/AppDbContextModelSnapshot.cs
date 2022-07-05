@@ -3,12 +3,12 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Nikan.Services.CrmProfiles.Infrastructure.Data;
+using Nikan.Services.BasicData.Infrastructure.Data;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace Nikan.Services.CrmProfiles.Infrastructure.Migrations
+namespace Nikan.Services.BasicData.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot
@@ -22,19 +22,19 @@ namespace Nikan.Services.CrmProfiles.Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Nikan.Services.CrmProfiles.Core.AccountAggregate.Company", b =>
+            modelBuilder.Entity("Nikan.Services.BasicData.Core.CompanyAggregate.Company", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("CompanyId")
-                        .HasColumnType("uuid");
-
                     b.Property<Guid>("CreatedBy")
                         .HasColumnType("uuid");
 
-                    b.Property<DateTimeOffset>("DateIssued")
+                    b.Property<DateTimeOffset>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTimeOffset>("DateModified")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("EmailAddress")
@@ -46,16 +46,27 @@ namespace Nikan.Services.CrmProfiles.Infrastructure.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("PostalAddress")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<uint>("xmin")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("xid");
+
                     b.HasKey("Id");
 
-                    b.ToTable("account", (string)null);
+                    b.HasIndex("EmailAddress");
+
+                    b.HasIndex("Phone");
+
+                    b.HasIndex("Title")
+                        .IsUnique();
+
+                    b.ToTable("company", (string)null);
                 });
 #pragma warning restore 612, 618
         }

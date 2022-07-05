@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Nikan.Services.CrmProfiles.SharedKernel;
+namespace Nikan.Services.BasicData.SharedKernel;
 
 public abstract class DomainEventBase : INotification
 {

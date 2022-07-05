@@ -1,0 +1,35 @@
+version: '3.4'
+
+services:
+  postgres:
+    image: postgres:11.9
+    platform: linux
+    ports:
+      - "54321:5432"
+    volumes:
+      - "d:/edx/Database/Postgresql/data:/var/lib/postgresql/data"
+    environment:
+      - POSTGRES_PASSWORD=123
+  #pgadmin:
+  #  image: dpage/pgadmin4
+  #  platform: linux
+  #  ports:
+  #    - "15432:80"
+  #  volumes:
+  #    - "d:/edx/Database/pgAdmin:/var/lib/pgadmin"
+  #  environment:
+  #    - PGADMIN_DEFAULT_EMAIL=omidkheiri@gmail.com
+  #    - PGADMIN_DEFAULT_PASSWORD=123
+
+  webapi:
+    image: ${DOCKER_REGISTRY-}nikan.services.basicdata.webapi
+    build:
+      context: .
+      dockerfile: src/WebApi/Dockerfile
+    ports:
+      - "5102:443"
+      - "5101:80"
+    environment:
+        - ConnectionStrings__DefaultConnection=Host=postgres;Database=nikan_services_basic_data;Username=postgres;Password=123
+    volumes:
+        - ${APPDATA}/ASP.NET/DataProtectionKeys:/root/.aspnet/DataProtection-Keys:rw

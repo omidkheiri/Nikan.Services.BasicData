@@ -1,12 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Nikan.Services.CrmProfiles.SharedKernel;
+namespace Nikan.Services.BasicData.SharedKernel;
 
 // This can be modified to EntityBase<TId> to support multiple key types (e.g. Guid)
 public abstract class EntityBase
 {
   private readonly List<DomainEventBase> _domainEvents = new();
-  public int Id { get; set; }
+  public Guid Id { get; set; }
 
   [NotMapped] public IEnumerable<DomainEventBase> DomainEvents => _domainEvents.AsReadOnly();
 

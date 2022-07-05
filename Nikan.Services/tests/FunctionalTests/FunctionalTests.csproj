@@ -5,8 +5,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>Nikan.Services.CrmProfiles.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
-    <AssemblyName>Nikan.Services.CrmProfiles.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>Nikan.Services.BasicData.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <AssemblyName>Nikan.Services.BasicData.$(MSBuildProjectName)</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -33,8 +33,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Nikan.Services.CrmProfiles.Web\WebApi.csproj" />
-    <ProjectReference Include="..\Nikan.Services.CrmProfiles.UnitTests\UnitTests.csproj" />
+    <ProjectReference Include="..\..\src\WebApi\WebApi.csproj" />
+    <ProjectReference Include="..\UnitTests\UnitTests.csproj" />
   </ItemGroup>
 
 </Project>

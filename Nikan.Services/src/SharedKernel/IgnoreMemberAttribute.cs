@@ -1,4 +1,4 @@
-﻿namespace Nikan.Services.CrmProfiles.SharedKernel;
+﻿namespace Nikan.Services.BasicData.SharedKernel;
 
 // source: https://github.com/jhewlett/ValueObject
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]

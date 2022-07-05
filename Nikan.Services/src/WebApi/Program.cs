@@ -1,11 +1,15 @@
 ﻿using Ardalis.ListStartupServices;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using Nikan.Services.CrmProfiles.Core;
-using Nikan.Services.CrmProfiles.Infrastructure;
-using Nikan.Services.CrmProfiles.Infrastructure.Data;
+using Nikan.Services.BasicData.Core;
+using Nikan.Services.BasicData.Core.CompanyAggregate;
+using Nikan.Services.BasicData.Infrastructure;
+using Nikan.Services.BasicData.Infrastructure.Data;
+using Nikan.Services.BasicData.SharedKernel.Pagination;
+using Nikan.Services.BasicData.WebApi.V1.Endpoints.Mapper;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,7 +33,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddSwaggerGen(c =>
 {
-  c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+  c.SwaggerDoc("v1", new OpenApiInfo { Title = "Nikan Services Basic Data", Version = "v1" });
   c.EnableAnnotations();
 });
 
@@ -54,6 +58,17 @@ builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true);
+
+var config = new MapperConfiguration(cfg =>
+{
+  cfg.AddProfile(new MappingProfile());
+
+});
+
+var mapper = config.CreateMapper();
+builder.Services.AddSingleton(mapper);
+
+//builder.Services.ConfigureRepositoryWrapper();
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -77,12 +92,12 @@ app.UseHttpsRedirection();
 app.UseSwagger();
 
 // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
-app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1"));
+app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Nikan Services Basic Data V1"));
 
 app.UseEndpoints(endpoints =>
 {
   endpoints.MapDefaultControllerRoute();
-  endpoints.MapRazorPages();
+
 });
 
 // Seed Database
