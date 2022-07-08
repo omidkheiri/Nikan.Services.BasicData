@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option csharp_namespace = "Nikan.Services.BasicData.gRPC.gRPC.Protos";
+
+package grpcCompany;
+
+// The greeting service definition.
+service GrpcCompany {
+    // Sends a greeting
+    rpc GetAllCompanies (GetAllRequest) returns (CompanyResponse);
+}
+
+// The request message containing the user's name.
+message GetAllRequest{}
+
+// The response message containing the greetings.
+message CompanyResponse{
+
+repeated GrpcCompanyModel message=1;
+}
+
+message GrpcCompanyModel {
+     string id=1;
+     string Title =2 ;
+     string Phone=3 ;
+     string EmailAddress =4;
+     string PostalAddress =5;
+    
+     
+}

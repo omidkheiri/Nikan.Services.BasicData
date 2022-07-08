@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option csharp_namespace = "Nikan.Services.BasicData.WebApi.V1.gPRC.Protos";
+
+package grpcCompany;
+
+// The company service definition.
+service GrpcCompany {
+    // Sends a greeting
+    rpc GetCompanyById (GetCopmanyRequest) returns (CompanyResponse);
+}
+
+// The request message.
+message GetCopmanyRequest{
+ string CompanyId = 1;
+}
+
+// The response message containing the company info.
+message CompanyResponse{
+
+repeated GrpcCompanyModel message=1;
+}
+
+message GrpcCompanyModel {
+     string Id=1;
+     string Title =2 ;
+     string Phone=3 ;
+     string EmailAddress =4;
+     string PostalAddress =5;
+    }
