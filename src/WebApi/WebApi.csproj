@@ -18,6 +18,12 @@
     <UserSecretsId>project-8084c8e7-0000-0000-b266-b33f42dd88c0</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="V1\Filters\**" />
+    <Content Remove="V1\Filters\**" />
+    <EmbeddedResource Remove="V1\Filters\**" />
+    <None Remove="V1\Filters\**" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove="V1\gRPC\Protos\grpcCompany.proto" />
   </ItemGroup>
 
@@ -42,9 +48,6 @@
     <PackageReference Include="Grpc.AspNetCore" Version="2.47.0" />
 
 
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="V1\Filters\" />
   </ItemGroup>
 
   <ItemGroup>
