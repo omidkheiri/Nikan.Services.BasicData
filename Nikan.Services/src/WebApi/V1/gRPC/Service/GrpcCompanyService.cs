@@ -18,17 +18,16 @@ public class GrpcCompanyService : GrpcCompany.GrpcCompanyBase
     _repository = repository;
     _mapper = mapper;
   }
-  public override Task<CompanyResponse> GetAllCompanies(GetAllRequest request, ServerCallContext context)
+  public override Task<CompanyResponse> GetCompanyById(GetCopmanyRequest request, ServerCallContext context)
   {
     var response = new CompanyResponse();
 
-    var companies = _repository.ListAsync().Result;
+    var company = _repository.GetByIdAsync(Guid.Parse(request.CompanyId)).Result;
 
 
-    foreach (var company in companies)
-    {
-      response.Message.Add(_mapper.Map<GrpcCompanyModel>(company));
-    }
+
+    response.Message.Add(_mapper.Map<GrpcCompanyModel>(company));
+
     return Task.FromResult(response);
   }
 
