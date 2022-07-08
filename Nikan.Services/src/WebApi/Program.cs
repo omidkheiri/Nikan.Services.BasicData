@@ -2,14 +2,15 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using AutoMapper;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Nikan.Services.BasicData.Core;
-using Nikan.Services.BasicData.Core.CompanyAggregate;
 using Nikan.Services.BasicData.Infrastructure;
 using Nikan.Services.BasicData.Infrastructure.Data;
-using Nikan.Services.BasicData.SharedKernel.Pagination;
 using Nikan.Services.BasicData.WebApi.V1.Endpoints.Mapper;
+using Nikan.Services.BasicData.WebApi.V1.gPRC;
+using Nikan.Services.BasicData.WebApi.V1.gPRC.Service;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,7 +31,7 @@ builder.Services.AddDbContext(connectionString);
 
 builder.Services.AddControllersWithViews().AddNewtonsoftJson();
 builder.Services.AddRazorPages();
-
+builder.Services.AddGrpc();
 builder.Services.AddSwaggerGen(c =>
 {
   c.SwaggerDoc("v1", new OpenApiInfo { Title = "Nikan Services Basic Data", Version = "v1" });
@@ -68,19 +69,24 @@ var config = new MapperConfiguration(cfg =>
 var mapper = config.CreateMapper();
 builder.Services.AddSingleton(mapper);
 
+
+
+
 //builder.Services.ConfigureRepositoryWrapper();
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-  app.UseDeveloperExceptionPage();
-  app.UseShowAllServicesMiddleware();
-}
-else
-{
-  app.UseExceptionHandler("/swagger");
-  app.UseHsts();
-}
+//if (app.Environment.IsDevelopment())
+//{
+app.UseDeveloperExceptionPage();
+app.UseShowAllServicesMiddleware();
+app.UseExceptionHandler("/swagger");
+app.UseHsts();
+//}
+//else
+//{
+//  app.UseExceptionHandler("/swagger");
+
+//}
 
 app.UseRouting();
 
@@ -97,6 +103,26 @@ app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Nikan Servi
 app.UseEndpoints(endpoints =>
 {
   endpoints.MapDefaultControllerRoute();
+  endpoints.MapGrpcService<GrpcCompanyService>();
+  endpoints.MapGet("/", async context =>
+  {
+    var endpointDataSource = context
+      .RequestServices.GetRequiredService<EndpointDataSource>();
+    await context.Response.WriteAsJsonAsync(new
+    {
+      results = endpointDataSource
+        .Endpoints
+        .OfType<RouteEndpoint>()
+        .Where(e => e.DisplayName?.StartsWith("gRPC") == true)
+        .Select(e => new
+        {
+          name = e.DisplayName,
+          pattern = e.RoutePattern.RawText,
+          order = e.Order
+        })
+        .ToList()
+    });
+  });
 
 });
 
@@ -118,5 +144,6 @@ using (var scope = app.Services.CreateScope())
     logger.LogError(ex, "An error occurred seeding the DB. {exceptionMessage}", ex.Message);
   }
 }
+
 
 app.Run();

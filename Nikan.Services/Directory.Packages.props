@@ -1,7 +1,8 @@
 <Project>
   <PropertyGroup>
-    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
   </PropertyGroup>
+
   <ItemGroup>
     <PackageVersion Include="Ardalis.ApiEndpoints" Version="4.0.1" />
     <PackageVersion Include="Ardalis.GuardClauses" Version="4.0.1" />
@@ -39,6 +40,10 @@
     <PackageVersion Include="AutoMapper" Version="11.0.1" />
     <PackageVersion Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.15.1" />
     <PackageVersion Include="System.Linq.Dynamic.Core" Version="1.2.19" />
+    <PackageVersion Include="Grpc.AspNetCore" Version="2.47.0" />
+    <PackageVersion Include="Google.Protobuf" Version="3.21.2" />
+
+    <PackageVersion Include="Grpc.Tools" Version="2.47.0"/>
 
   </ItemGroup>
 </Project>

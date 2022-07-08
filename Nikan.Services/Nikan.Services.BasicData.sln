@@ -34,7 +34,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedKernel", "src\SharedK
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "tests\UnitTests\UnitTests.csproj", "{1DC7F5A0-DDF7-4975-84EB-05F4FC1B6AB5}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{87A19561-6FF8-43B9-955B-738315B9A005}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{251738A2-EF01-4233-BAE1-38486ABC9D3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -130,18 +130,18 @@ Global
 		{1DC7F5A0-DDF7-4975-84EB-05F4FC1B6AB5}.Release|x64.Build.0 = Release|Any CPU
 		{1DC7F5A0-DDF7-4975-84EB-05F4FC1B6AB5}.Release|x86.ActiveCfg = Release|Any CPU
 		{1DC7F5A0-DDF7-4975-84EB-05F4FC1B6AB5}.Release|x86.Build.0 = Release|Any CPU
-		{87A19561-6FF8-43B9-955B-738315B9A005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{87A19561-6FF8-43B9-955B-738315B9A005}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{87A19561-6FF8-43B9-955B-738315B9A005}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{87A19561-6FF8-43B9-955B-738315B9A005}.Debug|x64.Build.0 = Debug|Any CPU
-		{87A19561-6FF8-43B9-955B-738315B9A005}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{87A19561-6FF8-43B9-955B-738315B9A005}.Debug|x86.Build.0 = Debug|Any CPU
-		{87A19561-6FF8-43B9-955B-738315B9A005}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{87A19561-6FF8-43B9-955B-738315B9A005}.Release|Any CPU.Build.0 = Release|Any CPU
-		{87A19561-6FF8-43B9-955B-738315B9A005}.Release|x64.ActiveCfg = Release|Any CPU
-		{87A19561-6FF8-43B9-955B-738315B9A005}.Release|x64.Build.0 = Release|Any CPU
-		{87A19561-6FF8-43B9-955B-738315B9A005}.Release|x86.ActiveCfg = Release|Any CPU
-		{87A19561-6FF8-43B9-955B-738315B9A005}.Release|x86.Build.0 = Release|Any CPU
+		{251738A2-EF01-4233-BAE1-38486ABC9D3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{251738A2-EF01-4233-BAE1-38486ABC9D3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{251738A2-EF01-4233-BAE1-38486ABC9D3F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{251738A2-EF01-4233-BAE1-38486ABC9D3F}.Debug|x64.Build.0 = Debug|Any CPU
+		{251738A2-EF01-4233-BAE1-38486ABC9D3F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{251738A2-EF01-4233-BAE1-38486ABC9D3F}.Debug|x86.Build.0 = Debug|Any CPU
+		{251738A2-EF01-4233-BAE1-38486ABC9D3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{251738A2-EF01-4233-BAE1-38486ABC9D3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{251738A2-EF01-4233-BAE1-38486ABC9D3F}.Release|x64.ActiveCfg = Release|Any CPU
+		{251738A2-EF01-4233-BAE1-38486ABC9D3F}.Release|x64.Build.0 = Release|Any CPU
+		{251738A2-EF01-4233-BAE1-38486ABC9D3F}.Release|x86.ActiveCfg = Release|Any CPU
+		{251738A2-EF01-4233-BAE1-38486ABC9D3F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
