@@ -1,11 +1,15 @@
 version: '3.4'
 
 services:
+  
   postgres:
     image: postgres:11.9
     platform: linux
     ports:
       - "54321:5432"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.5
     volumes:
       - "d:/edx/Database/Postgresql/data:/var/lib/postgresql/data"
     environment:
@@ -27,9 +31,27 @@ services:
       context: .
       dockerfile: src/WebApi/Dockerfile
     ports:
-      - "5102:443"
+    
       - "5101:80"
+    hostname: basic-data
+    domainname: basic-data
+    networks:
+       vpcbr:
+            ipv4_address: 10.5.0.6
+            aliases:
+            - basic-data
+           
+          
     environment:
         - ConnectionStrings__DefaultConnection=Host=postgres;Database=nikan_services_basic_data;Username=postgres;Password=123
     volumes:
         - ${APPDATA}/ASP.NET/DataProtectionKeys:/root/.aspnet/DataProtection-Keys:rw
+networks:
+    vpcbr:
+      driver: bridge
+      ipam:
+         config:
+          - subnet: 10.5.0.0/16
+            gateway: 10.5.0.1
+  
+    
