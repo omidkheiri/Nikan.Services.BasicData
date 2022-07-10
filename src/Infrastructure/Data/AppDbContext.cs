@@ -53,9 +53,4 @@ public class AppDbContext : DbContext
 
     return result;
   }
-
-  public override int SaveChanges()
-  {
-    return SaveChangesAsync().GetAwaiter().GetResult();
-  }
 }
