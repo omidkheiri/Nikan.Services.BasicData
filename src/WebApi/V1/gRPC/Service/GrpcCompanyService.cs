@@ -12,14 +12,27 @@ public class GrpcCompanyService : GrpcCompany.GrpcCompanyBase
   private readonly IRepository<Company> _repository;
   private readonly IMapper _mapper;
   private readonly ILogger<GrpcCompanyService> _logger;
-  public GrpcCompanyService(ILogger<GrpcCompanyService> logger, IRepository<Company> repository, IMapper mapper)
+
+  public GrpcCompanyService(
+                            ILogger<GrpcCompanyService> logger
+                          , IRepository<Company> repository
+                          , IMapper mapper
+    )
   {
     _logger = logger;
     _repository = repository;
     _mapper = mapper;
+
   }
   public override Task<CompanyResponse> GetCompanyById(GetCopmanyRequest request, ServerCallContext context)
   {
+
+
+
+
+
+
+
     var response = new CompanyResponse();
 
     var company = _repository.GetByIdAsync(Guid.Parse(request.CompanyId)).Result;

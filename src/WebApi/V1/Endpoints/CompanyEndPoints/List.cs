@@ -1,4 +1,5 @@
 ﻿using Ardalis.ApiEndpoints;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Nikan.Services.BasicData.Core.CompanyAggregate;
@@ -23,6 +24,7 @@ public class List : EndpointBaseAsync.WithRequest<ListCompanyRequest>.WithResult
   [SwaggerOperation(Summary = "List companies", Description = "List companies record",
     OperationId = "Companies.List"
     , Tags = new[] { "CompaniesEndPoint" })]
+  [Authorize]
   public override async Task<PagedList<Company>> HandleAsync([FromQuery] ListCompanyRequest request, CancellationToken cancellationToken = new CancellationToken())
   {
 
