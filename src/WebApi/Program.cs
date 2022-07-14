@@ -10,7 +10,10 @@ using Nikan.Services.BasicData.Infrastructure.Data;
 using Nikan.Services.BasicData.WebApi.Options;
 using Nikan.Services.BasicData.WebApi.V1.Endpoints.Mapper;
 using Nikan.Services.BasicData.WebApi.V1.gPRC.Service;
+using AspNetCore.Authentication.ApiKey;
 using Serilog;
+using System;
+using Nikan.Services.BasicData.WebApi.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +26,19 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
   options.CheckConsentNeeded = context => true;
   options.MinimumSameSitePolicy = SameSiteMode.None;
 });
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddAuthentication("Bearer")
+    .AddIdentityServerAuthentication("Bearer", options =>
+    {
+      options.ApiName = "Basic Data API";
+      options.Authority = "http://sts.ribbonid.com";
+      options.RequireHttpsMetadata = false;
+    });
+;
+builder.Services.AddDbContext(connectionString);
+
+builder.Services.AddControllersWithViews().AddNewtonsoftJson();
 
 builder.Services.AddGrpc();
 
@@ -81,8 +97,10 @@ else
 
 app.UseRouting();
 
+app.UseAuthentication();
+app.UseAuthorization();
 
-
+app.UseMiddleware<ApiKeyMiddleware>();
 // Enable middleware to serve generated Swagger as a JSON endpoint.
 app.UseSwagger();
 
