@@ -17,21 +17,21 @@ public class ApiKeyMiddleware
     if (context.Request.ContentType?.ToLower() == "application/grpc")
     {
 
-      if (!context.Request.Headers.ContainsKey(APIKEYNAME))
-      {
+      //if (!context.Request.Headers.ContainsKey(APIKEYNAME))
+      //{
 
-        context.Response.StatusCode = 402;
-        return;
-      }
-      if (!context.Request.Headers.Where(i => i.Key == APIKEYNAME
-      && i.Value == _apikeyvalue
-      ).Any()) {
+      //  context.Response.StatusCode = 402;
+      //  return;
+      //}
+      //if (!context.Request.Headers.Where(i => i.Key == APIKEYNAME
+      //&& i.Value == _apikeyvalue
+      //).Any()) {
 
-        context.Response.StatusCode = 401;
-        return;
-      }
+      //  context.Response.StatusCode = 401;
+      //  return;
+      //}
 
-     
+
 
 
 
