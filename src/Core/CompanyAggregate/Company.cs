@@ -8,6 +8,7 @@ public class Company : EntityBase, IAggregateRoot
 {
   private Company()
   {
+
     Id = Guid.NewGuid();
     DateCreated = DateTimeOffset.UtcNow;
     DateModified = DateCreated;
@@ -21,7 +22,7 @@ public class Company : EntityBase, IAggregateRoot
     EmailAddress = Guard.Against.NullOrEmpty(emailAddress, nameof(emailAddress));
     PostalAddress = postalAddress;
     CreatedBy = createdBy;
-
+    if (title == "NIKAN") { Id = Guid.Parse("00000000-1111-1111-0000-111111111111"); }
   }
 
 

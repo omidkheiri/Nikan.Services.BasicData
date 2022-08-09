@@ -14,6 +14,7 @@ using AspNetCore.Authentication.ApiKey;
 using Serilog;
 using System;
 using Nikan.Services.BasicData.WebApi.Middleware;
+using Nikan.Services.BasicData.WebApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,7 +36,7 @@ builder.Services.AddAuthentication("Bearer")
       options.Authority = "http://sts.ribbonid.com";
       options.RequireHttpsMetadata = false;
     });
-;
+
 builder.Services.AddDbContext(connectionString);
 
 builder.Services.AddControllersWithViews().AddNewtonsoftJson();
@@ -143,7 +144,7 @@ using (var scope = app.Services.CreateScope())
     var context = services.GetRequiredService<AppDbContext>();
     context.Database.Migrate();
     context.Database.EnsureCreated();
-    // SeedData.Initialize(services);
+    SeedData.Initialize(services);
   }
   catch (Exception ex)
   {
